@@ -2,6 +2,21 @@
   "schemaVersion": 1,
   "files": [
     {
+      "path": "smoke/2026-11-16-43947269540-1.json",
+      "suite": "smoke",
+      "date": "2026-11-16",
+      "runId": 43947269540,
+      "attempt": 1,
+      "jobs": 2,
+      "succeeded": 2,
+      "runners": [
+        "starsling-x64",
+        "starsling-x64-8x32"
+      ],
+      "subset": true,
+      "origin": "workflow_dispatch"
+    },
+    {
       "path": "cpu-daily/2026-11-16-43829086092-1.json",
       "suite": "cpu-daily",
       "date": "2026-11-16",

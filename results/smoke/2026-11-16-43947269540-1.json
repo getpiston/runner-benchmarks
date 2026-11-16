@@ -1,0 +1,507 @@
+{
+  "schemaVersion": 1,
+  "suite": "smoke",
+  "workload": {
+    "name": "Smoke",
+    "description": "Picks up a job and records the host. Used to check which runner labels this repository can reach."
+  },
+  "run": {
+    "id": 43947269540,
+    "attempt": 1,
+    "date": "2026-11-16",
+    "startedAt": "2026-11-16T20:12:02Z",
+    "url": "https://github.com/runs-on-demo/benchmark-public/actions/runs/43947269540",
+    "sha": "243b31b3ed0981ecde012ccbea5190a8ee826c8e",
+    "event": "workflow_dispatch",
+    "repository": "runs-on-demo/benchmark-public"
+  },
+  "selection": {
+    "event": "workflow_dispatch",
+    "source": "inputs",
+    "origin": {
+      "event": "workflow_dispatch",
+      "source": "inputs",
+      "runId": 43947269540
+    },
+    "runners": "starsling-x64,starsling-x64-8x32",
+    "arch": "all",
+    "iterations": 1,
+    "defaultRunners": 149,
+    "subset": true,
+    "missingDefaultRunners": [
+      "github-x64",
+      "github-x64-8x32",
+      "github-x64-2x8",
+      "github-arm64",
+      "github-arm64-8x32",
+      "github-arm64-2x8",
+      "runson-m8azn-x64",
+      "runson-m8a-x64",
+      "runson-m8id-x64",
+      "runson-r8a-tmpfs-x64",
+      "runson-r8a-2xlarge-tmpfs-x64",
+      "runson-m9g-arm64",
+      "runson-m9gd-arm64",
+      "runson-c8g-arm64-4x8",
+      "runson-c8g-arm64-8x16",
+      "runson-m9g-arm64-8x32",
+      "blacksmith-x64",
+      "blacksmith-x64-8x32",
+      "blacksmith-x64-2x8",
+      "blacksmith-arm64",
+      "blacksmith-arm64-8x32",
+      "blacksmith-arm64-2x6",
+      "namespace-x64",
+      "namespace-x64-4x8",
+      "namespace-x64-8x16",
+      "namespace-x64-8x32",
+      "namespace-x64-2x8",
+      "namespace-arm64",
+      "namespace-arm64-4x8",
+      "namespace-arm64-apple",
+      "namespace-arm64-8x16",
+      "namespace-arm64-8x32",
+      "namespace-arm64-2x8",
+      "namespace-arm64-apple-2x8",
+      "warpbuild-x64",
+      "warpbuild-x64-8x32",
+      "warpbuild-x64-2x",
+      "warpbuild-arm64",
+      "warpbuild-arm64-xfast",
+      "warpbuild-arm64-xfast-12x",
+      "warpbuild-arm64-8x32",
+      "warpbuild-arm64-2x",
+      "ubicloud-x64",
+      "ubicloud-premium-x64",
+      "ubicloud-x64-8x32",
+      "ubicloud-premium-x64-8x32",
+      "ubicloud-x64-2",
+      "ubicloud-premium-x64-2",
+      "ubicloud-arm64",
+      "ubicloud-arm64-8x32",
+      "ubicloud-arm64-2",
+      "avrea-x64",
+      "avrea-x64-8x32",
+      "avrea-x64-2",
+      "avrea-arm64",
+      "avrea-arm64-8x32",
+      "avrea-arm64-2",
+      "codebuild-x64",
+      "codebuild-x64-8x16",
+      "codebuild-x64-2x3",
+      "boat-x64-2x4",
+      "boat-x64",
+      "boat-x64-8x16",
+      "runson-m8azn-gp3tuned-x64",
+      "runson-c8a-x64-4x8",
+      "runson-c8a-x64-8x16",
+      "runson-i7i-large",
+      "runson-i7i-xlarge",
+      "runson-i7i-2xlarge",
+      "runson-i7i-4xlarge",
+      "runson-m8id-large",
+      "runson-m8id-2xlarge",
+      "runson-m8id-4xlarge",
+      "runson-m9gd-large",
+      "runson-m9gd-2xlarge",
+      "runson-m9g-xlarge-tmpfs",
+      "runson-r9g-xlarge-tmpfs",
+      "runson-m9g-2xlarge-tmpfs",
+      "runson-c8g-large",
+      "runson-m9g-large",
+      "runson-m8azn-large",
+      "runson-m8azn-3xlarge",
+      "runson-m8a-2xlarge",
+      "runson-m8a-2xlarge-gp3tuned",
+      "runson-m8a-2xlarge-tmpfs",
+      "runson-c8a-large",
+      "runson-m8a-large",
+      "runson-r8a-large",
+      "runson-r8a-large-tmpfs",
+      "runson-r9g-large-tmpfs",
+      "runson-t8i-medium",
+      "runson-m8i-large",
+      "runson-m8i-flex-large",
+      "runson-m8i-xlarge",
+      "runson-m8i-flex-xlarge",
+      "runson-m8i-2xlarge",
+      "runson-m8i-flex-2xlarge",
+      "ec2-c6a-large",
+      "ec2-c6i-large",
+      "ec2-c6id-large",
+      "ec2-c7a-large",
+      "ec2-c7i-flex-large",
+      "ec2-c7i-large",
+      "ec2-i7i-large",
+      "ec2-i7ie-large",
+      "ec2-m4-large",
+      "ec2-m5a-large",
+      "ec2-m5zn-large",
+      "ec2-m6a-large",
+      "ec2-m6i-large",
+      "ec2-m6id-large",
+      "ec2-m6idn-large",
+      "ec2-m7a-large",
+      "ec2-m7i-flex-large",
+      "ec2-m7i-large",
+      "ec2-m8a-large",
+      "ec2-m8azn-large",
+      "ec2-m8i-flex-large",
+      "ec2-m8i-large",
+      "ec2-r6i-large",
+      "ec2-r6id-large",
+      "ec2-r6idn-large",
+      "ec2-r7a-large",
+      "ec2-r7i-large",
+      "ec2-r7iz-large",
+      "ec2-r8i-flex-large",
+      "ec2-r8i-large",
+      "ec2-t3-medium",
+      "ec2-t3a-medium",
+      "ec2-t8i-medium",
+      "ec2-z1d-large",
+      "ec2-c6g-large",
+      "ec2-c6gd-large",
+      "ec2-c7g-large",
+      "ec2-c7gd-large",
+      "ec2-c8g-large",
+      "ec2-i8g-large",
+      "ec2-m6g-large",
+      "ec2-m6gd-large",
+      "ec2-m7g-large",
+      "ec2-m7gd-large",
+      "ec2-m8g-large",
+      "ec2-m9g-large",
+      "ec2-r7g-large",
+      "ec2-r7gd-large",
+      "ec2-r8g-large",
+      "ec2-t4g-medium"
+    ]
+  },
+  "runners": [
+    {
+      "id": "starsling-x64",
+      "provider": "StarSling",
+      "arch": "x64",
+      "vcpu": 4,
+      "ramGiB": 16,
+      "label": "starsling-ubuntu-24.04",
+      "note": "The default StarSling label is a 4 vCPU runner.",
+      "variant": "4 vCPU",
+      "pausedSuites": [
+        "hardware",
+        "rust",
+        "node",
+        "docker",
+        "cache",
+        "burst",
+        "cpu-daily"
+      ],
+      "paused": "Paused on 2026-11-07: StarSling stopped picking up jobs on 2026-11-06 (they stayed queued)."
+    },
+    {
+      "id": "starsling-x64-8x32",
+      "provider": "StarSling",
+      "arch": "x64",
+      "vcpu": 8,
+      "ramGiB": 32,
+      "label": "starsling-ubuntu-24.04-8",
+      "variant": "8 vCPU",
+      "pausedSuites": [
+        "hardware",
+        "rust",
+        "node",
+        "docker",
+        "cache",
+        "burst"
+      ],
+      "paused": "Paused on 2026-11-07: StarSling stopped picking up jobs on 2026-11-06 (they stayed queued)."
+    }
+  ],
+  "results": [
+    {
+      "key": "starsling-x64--1",
+      "runnerId": "starsling-x64",
+      "provider": "StarSling",
+      "arch": "x64",
+      "iteration": 1,
+      "status": "success",
+      "failedAt": null,
+      "queueSeconds": 11,
+      "jobSeconds": 7,
+      "workloadSeconds": 0,
+      "createdAt": "2026-11-16T20:45:58Z",
+      "startedAt": "2026-11-16T20:46:09Z",
+      "phases": [
+        {
+          "name": "hello",
+          "seconds": 0,
+          "status": "success"
+        }
+      ],
+      "runnerName": "starsling-z-2a5c62bdca6c4dd9b9b42fd9d8a4ca6d",
+      "runnerGroup": "default",
+      "jobUrl": "https://github.com/runs-on-demo/benchmark-public/actions/runs/43947269540/job/133600625325",
+      "host": {
+        "collectedAt": "2026-11-16T20:46:12+00:00",
+        "arch": "x86_64",
+        "kernel": "7.3.4",
+        "os": "Ubuntu 24.04.5 LTS",
+        "cpu": {
+          "model": "AMD EPYC 9655P 96-Core Processor",
+          "vendor": "AuthenticAMD",
+          "logicalCpus": 5,
+          "threadsPerCore": 1,
+          "maxMHz": null,
+          "virtualization": "kvm",
+          "hypervisor": "KVM"
+        },
+        "memoryGiB": 16.13,
+        "memory": {
+          "swapGiB": 10.0,
+          "availableGiB": 15.1,
+          "swapDevices": [
+            {
+              "kind": "file",
+              "sizeGiB": 10.0
+            }
+          ],
+          "overcommit": 1,
+          "swappiness": 40,
+          "zram": [
+            "zram0"
+          ]
+        },
+        "manufacturer": "Cloud Hypervisor",
+        "product": "cloud-hypervisor",
+        "storage": {
+          "workspace": {
+            "path": "/home/runner/_work/benchmark-public/benchmark-public",
+            "source": "overlay",
+            "target": "/home/runner",
+            "fstype": "overlay",
+            "options": "rw,relatime,lowerdir=/run/starsling-tmpfs.c4Wo1A/home-lower,upperdir=/run/starsling-tmpfs.c4Wo1A/home-upper,workdir=/run/starsling-tmpfs.c4Wo1A/home-work,redirect_dir=on,uuid=on",
+            "sizeGiB": 16.0,
+            "freeGiB": 15.8
+          },
+          "tmp": {
+            "path": "/tmp",
+            "source": "overlay",
+            "target": "/tmp",
+            "fstype": "overlay",
+            "options": "rw,relatime,lowerdir=/run/starsling-tmpfs.c4Wo1A/tmp-lower,upperdir=/run/starsling-tmpfs.c4Wo1A/tmp-upper,workdir=/run/starsling-tmpfs.c4Wo1A/tmp-work,redirect_dir=on,uuid=on",
+            "sizeGiB": 16.0,
+            "freeGiB": 15.8
+          },
+          "root": {
+            "path": "/",
+            "source": "/dev/vda",
+            "target": "/",
+            "fstype": "ext4",
+            "options": "rw,noatime,discard,prjquota",
+            "sizeGiB": 504.0,
+            "freeGiB": 439.0
+          },
+          "docker": {
+            "path": "/var/lib/docker",
+            "source": "/dev/vda[/var/lib/docker]",
+            "target": "/var/lib/docker",
+            "fstype": "ext4",
+            "options": "rw,noatime,discard,prjquota",
+            "sizeGiB": 504.0,
+            "freeGiB": 439.0
+          },
+          "dockerDriver": "overlay2",
+          "devices": [
+            {
+              "name": "nullb0",
+              "type": "disk",
+              "sizeGiB": 250.0,
+              "model": null,
+              "rotational": false,
+              "transport": null,
+              "fstype": null,
+              "mountpoint": null
+            },
+            {
+              "name": "zram0",
+              "type": "disk",
+              "sizeGiB": null,
+              "model": null,
+              "rotational": false,
+              "transport": null,
+              "fstype": null,
+              "mountpoint": null
+            },
+            {
+              "name": "vda",
+              "type": "disk",
+              "sizeGiB": 512.0,
+              "model": null,
+              "rotational": true,
+              "transport": "virtio",
+              "fstype": null,
+              "mountpoint": "/"
+            }
+          ]
+        },
+        "ec2": null,
+        "runsOn": null,
+        "network": {
+          "org": "AS398465 Rackdog, LLC",
+          "city": "Ashburn",
+          "region": "Virginia",
+          "country": "US"
+        },
+        "runner": {
+          "name": "starsling-z-2a5c62bdca6c4dd9b9b42fd9d8a4ca6d",
+          "environment": "self-hosted",
+          "imageOS": "ubuntu24",
+          "imageVersion": "20261012.334.1"
+        }
+      }
+    },
+    {
+      "key": "starsling-x64-8x32--1",
+      "runnerId": "starsling-x64-8x32",
+      "provider": "StarSling",
+      "arch": "x64",
+      "iteration": 1,
+      "status": "success",
+      "failedAt": null,
+      "queueSeconds": 9,
+      "jobSeconds": 8,
+      "workloadSeconds": 0,
+      "createdAt": "2026-11-16T20:45:58Z",
+      "startedAt": "2026-11-16T20:46:07Z",
+      "phases": [
+        {
+          "name": "hello",
+          "seconds": 0,
+          "status": "success"
+        }
+      ],
+      "runnerName": "starsling-z-e17ac6376cf24b83a827719613c5be99",
+      "runnerGroup": "default",
+      "jobUrl": "https://github.com/runs-on-demo/benchmark-public/actions/runs/43947269540/job/133600625216",
+      "host": {
+        "collectedAt": "2026-11-16T20:46:11+00:00",
+        "arch": "x86_64",
+        "kernel": "7.3.4",
+        "os": "Ubuntu 24.04.5 LTS",
+        "cpu": {
+          "model": "AMD EPYC 9655P 96-Core Processor",
+          "vendor": "AuthenticAMD",
+          "logicalCpus": 10,
+          "threadsPerCore": 1,
+          "maxMHz": null,
+          "virtualization": "kvm",
+          "hypervisor": "KVM"
+        },
+        "memoryGiB": 32.35,
+        "memory": {
+          "swapGiB": 10.0,
+          "availableGiB": 31.14,
+          "swapDevices": [
+            {
+              "kind": "file",
+              "sizeGiB": 10.0
+            }
+          ],
+          "overcommit": 1,
+          "swappiness": 40,
+          "zram": [
+            "zram0"
+          ]
+        },
+        "manufacturer": "Cloud Hypervisor",
+        "product": "cloud-hypervisor",
+        "storage": {
+          "workspace": {
+            "path": "/home/runner/_work/benchmark-public/benchmark-public",
+            "source": "overlay",
+            "target": "/home/runner",
+            "fstype": "overlay",
+            "options": "rw,relatime,lowerdir=/run/starsling-tmpfs.z5VtJo/home-lower,upperdir=/run/starsling-tmpfs.z5VtJo/home-upper,workdir=/run/starsling-tmpfs.z5VtJo/home-work,redirect_dir=on,uuid=on",
+            "sizeGiB": 32.0,
+            "freeGiB": 31.8
+          },
+          "tmp": {
+            "path": "/tmp",
+            "source": "overlay",
+            "target": "/tmp",
+            "fstype": "overlay",
+            "options": "rw,relatime,lowerdir=/run/starsling-tmpfs.z5VtJo/tmp-lower,upperdir=/run/starsling-tmpfs.z5VtJo/tmp-upper,workdir=/run/starsling-tmpfs.z5VtJo/tmp-work,redirect_dir=on,uuid=on",
+            "sizeGiB": 32.0,
+            "freeGiB": 31.8
+          },
+          "root": {
+            "path": "/",
+            "source": "/dev/vda",
+            "target": "/",
+            "fstype": "ext4",
+            "options": "rw,noatime,discard,prjquota",
+            "sizeGiB": 504.0,
+            "freeGiB": 439.0
+          },
+          "docker": {
+            "path": "/var/lib/docker",
+            "source": "/dev/vda[/var/lib/docker]",
+            "target": "/var/lib/docker",
+            "fstype": "ext4",
+            "options": "rw,noatime,discard,prjquota",
+            "sizeGiB": 504.0,
+            "freeGiB": 439.0
+          },
+          "dockerDriver": "overlay2",
+          "devices": [
+            {
+              "name": "nullb0",
+              "type": "disk",
+              "sizeGiB": 250.0,
+              "model": null,
+              "rotational": false,
+              "transport": null,
+              "fstype": null,
+              "mountpoint": null
+            },
+            {
+              "name": "zram0",
+              "type": "disk",
+              "sizeGiB": null,
+              "model": null,
+              "rotational": false,
+              "transport": null,
+              "fstype": null,
+              "mountpoint": null
+            },
+            {
+              "name": "vda",
+              "type": "disk",
+              "sizeGiB": 512.0,
+              "model": null,
+              "rotational": true,
+              "transport": "virtio",
+              "fstype": null,
+              "mountpoint": "/"
+            }
+          ]
+        },
+        "ec2": null,
+        "runsOn": null,
+        "network": {
+          "org": "AS398465 Rackdog, LLC",
+          "city": "Ashburn",
+          "region": "Virginia",
+          "country": "US"
+        },
+        "runner": {
+          "name": "starsling-z-e17ac6376cf24b83a827719613c5be99",
+          "environment": "self-hosted",
+          "imageOS": "ubuntu24",
+          "imageVersion": "20261012.334.1"
+        }
+      }
+    }
+  ]
+}
