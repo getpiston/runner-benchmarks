@@ -1,5 +1,26 @@
 # GitHub Actions runner benchmarks
 
+Piston's fork of [RunsOn's benchmark harness](https://github.com/runs-on-demo/benchmark-public),
+with Piston's runners added. Every Piston run's job logs and raw results are
+public here, and the harness is upstream's, so anyone can check how a figure
+Piston publishes was produced.
+
+What differs from upstream:
+
+- Piston's 2, 4 and 8 CPU runners are in [config/runners.json](config/runners.json):
+  `piston-x64-2x8`, `piston-x64` and `piston-x64-8x32`.
+  [bin/plan.py](bin/plan.py) counts Piston among the providers that serve
+  `actions/cache` from their own storage.
+- Nothing runs on a schedule. A suite runs when it is dispatched, or when its
+  trigger file is pushed, with `runners` set to Piston's ids and `github-x64`
+  for reference: the other providers' labels don't run from this repository.
+  [Piston: all suites](.github/workflows/piston.yml) does that in one click:
+  rust, node, docker, hardware, cache and CPU daily at once, then the burst.
+- [`results/`](results/) keeps upstream's results up to the fork. A result
+  from here links its run in this repository (`run.url`).
+
+The rest of this README is upstream's, apart from the schedule.
+
 The harness behind [runs-on.com/benchmarks](https://runs-on.com/benchmarks/).
 Every suite runs the same job on each provider's runners, and every run's raw
 results are committed to [`results/`](results/) as JSON.
@@ -101,22 +122,12 @@ runners is flagged `"subset": true`, in the file and in `results/index.json`.
 
 ## Schedule
 
-Each measurement suite has a cron (smoke is dispatch-only), staggered so two
-suites never share a provider's concurrency. While the first results build up,
-the suites run every three days: Rust, TypeScript and Docker on day one (02:00,
-04:00, 06:00 UTC), hardware and cache on day two (02:00, 04:00), the burst
-alone on day three at 15:00. EC2 storage runs on the 1st of each month and EC2
-CPU on the 10th, both at 10:00, an hour no other suite uses. CPU daily runs every day
-at 08:00, also an hour of its own. Results also come from manual dispatches and trigger-file
-pushes; `selection.origin.event` says which.
-A scheduled run always uses the suite's default runners and ignores the
-trigger files.
+None in this fork: every run here was dispatched or started by a trigger-file
+push, which `selection.origin.event` records.
 A burst shard publishes, and starts the next one, only once all its jobs have
 finished, and a queued job that no runner picks up waits up to 24 hours. So a
 label no provider serves stalls the whole chain: dispatch `smoke` before a
 burst chain to confirm every label is served.
-The site (runs-on/runs-on.com) checks for new results every six hours and
-opens a pull request with them; they go live once it is merged.
 
 ## EC2 CPU per instance type
 

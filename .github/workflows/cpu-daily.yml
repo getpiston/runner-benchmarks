@@ -1,19 +1,11 @@
 name: CPU daily
 
-# PassMark single-thread every day on each provider's 2 vCPU runners, plus the
-# few runners at other sizes whose label continues a line of runs-on.com's CPU
+# PassMark single-thread on each provider's 2 vCPU runners, plus the few
+# runners at other sizes whose label continues a line of runs-on.com's CPU
 # history (config/runners.json, "cpu-daily" in suites). The hardware suite's
-# passmark group only; the hardware suite itself still runs every group every
-# third day. runs-on.com draws one line per runner label over time from these
-# runs and the hardware suite's.
+# passmark group only.
 
 on:
-  # Daily at 08:00 UTC: an hour no other suite uses (rust and hardware 02:00,
-  # node and cache 04:00, docker 06:00, ec2-cpu and ec2-storage 10:00 once a
-  # month, burst 15:00), so it never shares a provider's concurrency with
-  # them. Schedules only fire on the default branch.
-  schedule:
-    - cron: "0 8 * * *"
   workflow_dispatch:
     inputs:
       runners:

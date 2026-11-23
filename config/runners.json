@@ -163,6 +163,69 @@
       }
     },
     {
+      "id": "piston-x64",
+      "provider": "Piston",
+      "arch": "x64",
+      "vcpu": 4,
+      "ramGiB": 16,
+      "label": "piston-4cpu-ubuntu-2402",
+      "suites": [
+        "hardware",
+        "rust",
+        "node",
+        "docker",
+        "cache",
+        "burst"
+      ],
+      "cacheActions": [
+        "actions/cache"
+      ],
+      "variant": "4 CPUs"
+    },
+    {
+      "id": "piston-x64-8x32",
+      "provider": "Piston",
+      "arch": "x64",
+      "vcpu": 8,
+      "ramGiB": 32,
+      "label": "piston-8cpu-ubuntu-2402",
+      "suites": [
+        "hardware",
+        "rust",
+        "node",
+        "docker",
+        "cache",
+        "burst"
+      ],
+      "cacheActions": [
+        "actions/cache"
+      ],
+      "variant": "8 CPUs"
+    },
+    {
+      "id": "piston-x64-2x8",
+      "provider": "Piston",
+      "arch": "x64",
+      "vcpu": 2,
+      "ramGiB": 8,
+      "label": "piston-2cpu-ubuntu-2402",
+      "suites": [
+        "hardware",
+        "rust",
+        "node",
+        "cache",
+        "burst",
+        "cpu-daily"
+      ],
+      "cacheActions": [
+        "actions/cache"
+      ],
+      "variant": "2 CPUs",
+      "suiteSkips": {
+        "docker": "Not run: the PostHog Docker build needs more than 8 GB of memory; it ran out of memory on 8 GB runners."
+      }
+    },
+    {
       "id": "runson-m8azn-x64",
       "provider": "RunsOn",
       "arch": "x64",

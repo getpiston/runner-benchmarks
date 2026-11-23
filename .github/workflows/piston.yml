@@ -1,0 +1,45 @@
+name: "Piston: all suites"
+
+# One click: every suite on Piston's 2, 4 and 8 CPU runners and GitHub's
+# standard runner. The six below start at once; the burst starts once they
+# have all finished, and its shards chain themselves. Each suite is given its
+# own runners, since a runner named in a dispatch joins the suite even where
+# its catalog entry skips it.
+
+on:
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    # Docker's bench job alone may take 90 minutes.
+    timeout-minutes: 180
+    permissions:
+      actions: write
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GH_REPO: ${{ github.repository }}
+      ALL: piston-x64-2x8,piston-x64,piston-x64-8x32,github-x64
+    steps:
+      - name: Suites
+        run: |
+          since=$(date -u +%Y-%m-%dT%H:%M:%SZ)
+          gh workflow run rust.yml --ref "$GITHUB_REF_NAME" -f runners="$ALL"
+          gh workflow run node.yml --ref "$GITHUB_REF_NAME" -f runners="$ALL"
+          gh workflow run docker.yml --ref "$GITHUB_REF_NAME" -f runners=piston-x64,piston-x64-8x32,github-x64
+          gh workflow run hardware.yml --ref "$GITHUB_REF_NAME" -f runners="$ALL"
+          gh workflow run cache.yml --ref "$GITHUB_REF_NAME" -f runners="$ALL"
+          gh workflow run cpu-daily.yml --ref "$GITHUB_REF_NAME" -f runners=piston-x64-2x8,github-x64
+          for suite in rust node docker hardware cache cpu-daily; do
+            id=""
+            while [ -z "$id" ]; do
+              sleep 10
+              id=$(gh run list --workflow "$suite.yml" --event workflow_dispatch --created ">=$since" --limit 1 --json databaseId --jq '.[0].databaseId // empty')
+            done
+            gh run watch "$id" --interval 60 > /dev/null
+            gh run view "$id" --json conclusion,url --jq "\"$suite: \(.conclusion) \(.url)\""
+          done
+      - name: Burst
+        run: gh workflow run burst.yml --ref "$GITHUB_REF_NAME" -f runners="$ALL"
