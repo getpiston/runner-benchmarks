@@ -60,7 +60,8 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 # no entry of theirs appeared; GitHub, Namespace, StarSling, CodeBuild and
 # every Warpbuild runner's did). Warpbuild's own action (WarpBuilds/cache)
 # stores in Warpbuild's storage, so only its actions/cache jobs share.
-REROUTES_ACTIONS_CACHE = {"RunsOn", "Blacksmith", "Ubicloud", "Avrea"}
+# Piston serves actions/cache from its own storage.
+REROUTES_ACTIONS_CACHE = {"RunsOn", "Blacksmith", "Ubicloud", "Avrea", "Piston"}
 
 
 # Shared cache jobs per wave (4 GiB each: 8 GiB in flight), and the waves

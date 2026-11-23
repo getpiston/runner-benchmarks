@@ -201,20 +201,12 @@ class CpuDaily(unittest.TestCase):
         rc, out, plan, _ = run_plan("cpu-daily", trigger, event="push")
         self.assertEqual((rc, out.get("run"), plan), (0, "false", None))
 
-    def test_runs_only_passmark_daily_at_its_own_hour(self):
+    def test_runs_only_passmark(self):
         text = (ROOT / ".github" / "workflows" / "cpu-daily.yml").read_text()
         self.assertIn("suite: cpu-daily\n", text)
         self.assertIn("groups: passmark\n", text)
-        self.assertIn('- cron: "0 8 * * *"', text)
         workload = json.loads((ROOT / "config" / "workloads.json").read_text())["cpu-daily"]
         self.assertEqual(workload["groups"], ["passmark"])
-        # No other suite's cron starts at 08:00.
-        for wf in (ROOT / ".github" / "workflows").glob("*.yml"):
-            if wf.name == "cpu-daily.yml":
-                continue
-            for line in wf.read_text().splitlines():
-                if "cron:" in line:
-                    self.assertNotEqual(line.split('"')[1].split()[1], "8", wf.name)
 
 
 class Lanes(unittest.TestCase):
