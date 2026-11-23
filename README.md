@@ -14,6 +14,8 @@ What differs from upstream:
 - Nothing runs on a schedule. A suite runs when it is dispatched, or when its
   trigger file is pushed, with `runners` set to Piston's ids and `github-x64`
   for reference: the other providers' labels don't run from this repository.
+  [Piston: all suites](.github/workflows/piston.yml) does that in one click:
+  rust, node, docker, hardware, cache and CPU daily at once, then the burst.
 - [`results/`](results/) keeps upstream's results up to the fork. A result
   from here links its run in this repository (`run.url`).
 
