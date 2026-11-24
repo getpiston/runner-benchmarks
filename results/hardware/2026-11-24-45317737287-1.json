@@ -1,0 +1,1031 @@
+{
+  "schemaVersion": 1,
+  "suite": "hardware",
+  "workload": {
+    "name": "Runner hardware",
+    "description": "CPU (sysbench, 7-Zip, PassMark), memory bandwidth, disk (fio in the job workspace), network downloads, a docker pull, and pgbench against a PostgreSQL service container."
+  },
+  "run": {
+    "id": 45317737287,
+    "attempt": 1,
+    "date": "2026-11-24",
+    "startedAt": "2026-11-24T03:11:24Z",
+    "url": "https://github.com/getpiston/runner-benchmarks/actions/runs/45317737287",
+    "sha": "d6bd574011dc3eb6b4d390ff4e7b1171785cdede",
+    "event": "workflow_dispatch",
+    "repository": "getpiston/runner-benchmarks"
+  },
+  "selection": {
+    "event": "workflow_dispatch",
+    "source": "inputs",
+    "origin": {
+      "event": "workflow_dispatch",
+      "source": "inputs",
+      "runId": 45317737287
+    },
+    "runners": "piston-x64-2x8,piston-x64,piston-x64-8x32,github-x64",
+    "arch": "all",
+    "iterations": 1,
+    "defaultRunners": 105,
+    "subset": true,
+    "missingDefaultRunners": [
+      "github-x64-8x32",
+      "github-x64-2x8",
+      "github-arm64",
+      "github-arm64-2x8",
+      "runson-m8azn-x64",
+      "runson-m8a-x64",
+      "runson-m8id-x64",
+      "runson-r8a-tmpfs-x64",
+      "runson-r8a-2xlarge-tmpfs-x64",
+      "runson-m9g-arm64",
+      "runson-m9gd-arm64",
+      "runson-c8g-arm64-4x8",
+      "runson-c8g-arm64-8x16",
+      "runson-m9g-arm64-8x32",
+      "blacksmith-x64",
+      "blacksmith-x64-8x32",
+      "blacksmith-x64-2x8",
+      "blacksmith-arm64",
+      "blacksmith-arm64-8x32",
+      "blacksmith-arm64-2x6",
+      "namespace-x64",
+      "namespace-x64-4x8",
+      "namespace-x64-8x16",
+      "namespace-x64-8x32",
+      "namespace-x64-2x8",
+      "namespace-arm64",
+      "namespace-arm64-4x8",
+      "namespace-arm64-apple",
+      "namespace-arm64-8x16",
+      "namespace-arm64-8x32",
+      "namespace-arm64-2x8",
+      "namespace-arm64-apple-2x8",
+      "warpbuild-x64",
+      "warpbuild-x64-8x32",
+      "warpbuild-x64-2x",
+      "warpbuild-arm64",
+      "warpbuild-arm64-xfast",
+      "warpbuild-arm64-xfast-12x",
+      "warpbuild-arm64-8x32",
+      "warpbuild-arm64-2x",
+      "ubicloud-x64",
+      "ubicloud-premium-x64",
+      "ubicloud-x64-8x32",
+      "ubicloud-premium-x64-8x32",
+      "ubicloud-x64-2",
+      "ubicloud-premium-x64-2",
+      "ubicloud-arm64",
+      "ubicloud-arm64-8x32",
+      "ubicloud-arm64-2",
+      "avrea-x64",
+      "avrea-x64-8x32",
+      "avrea-x64-2",
+      "avrea-arm64",
+      "avrea-arm64-8x32",
+      "avrea-arm64-2",
+      "starsling-x64",
+      "starsling-x64-8x32",
+      "sengi-x64",
+      "sengi-x64-8x32",
+      "sengi-x64-2",
+      "sengi-premium-x64",
+      "sengi-premium-x64-8x32",
+      "sengi-premium-x64-2",
+      "codebuild-x64",
+      "codebuild-x64-8x16",
+      "codebuild-x64-2x3",
+      "boat-x64-2x4",
+      "boat-x64",
+      "boat-x64-8x16",
+      "runson-m8azn-gp3tuned-x64",
+      "runson-c8a-x64-4x8",
+      "runson-c8a-x64-8x16",
+      "runson-i7i-large",
+      "runson-i7i-xlarge",
+      "runson-i7i-2xlarge",
+      "runson-m8id-large",
+      "runson-m8id-2xlarge",
+      "runson-m9gd-large",
+      "runson-m9gd-2xlarge",
+      "runson-m9g-xlarge-tmpfs",
+      "runson-r9g-xlarge-tmpfs",
+      "runson-m9g-2xlarge-tmpfs",
+      "runson-c8g-large",
+      "runson-m9g-large",
+      "runson-m8azn-large",
+      "runson-m8azn-3xlarge",
+      "runson-m8a-2xlarge",
+      "runson-m8a-2xlarge-gp3tuned",
+      "runson-m8a-2xlarge-tmpfs",
+      "runson-c8a-large",
+      "runson-m8a-large",
+      "runson-r8a-large",
+      "runson-r8a-large-tmpfs",
+      "runson-r9g-large-tmpfs",
+      "runson-t8i-medium",
+      "runson-m8i-large",
+      "runson-m8i-flex-large",
+      "runson-m8i-xlarge",
+      "runson-m8i-flex-xlarge",
+      "runson-m8i-2xlarge",
+      "runson-m8i-flex-2xlarge"
+    ]
+  },
+  "runners": [
+    {
+      "id": "github-x64",
+      "provider": "GitHub",
+      "arch": "x64",
+      "vcpu": 4,
+      "ramGiB": 16,
+      "label": "ubuntu-24.04",
+      "tier": "standard",
+      "storage": "network",
+      "note": "Standard 4 vCPU runner GitHub gives public repositories."
+    },
+    {
+      "id": "piston-x64",
+      "provider": "Piston",
+      "arch": "x64",
+      "vcpu": 4,
+      "ramGiB": 16,
+      "label": "piston-4cpu-ubuntu-2402",
+      "variant": "4 CPUs"
+    },
+    {
+      "id": "piston-x64-8x32",
+      "provider": "Piston",
+      "arch": "x64",
+      "vcpu": 8,
+      "ramGiB": 32,
+      "label": "piston-8cpu-ubuntu-2402",
+      "variant": "8 CPUs"
+    },
+    {
+      "id": "piston-x64-2x8",
+      "provider": "Piston",
+      "arch": "x64",
+      "vcpu": 2,
+      "ramGiB": 8,
+      "label": "piston-2cpu-ubuntu-2402",
+      "variant": "2 CPUs",
+      "suiteSkips": {
+        "docker": "Not run: the PostHog Docker build needs more than 8 GB of memory; it ran out of memory on 8 GB runners."
+      }
+    }
+  ],
+  "results": [
+    {
+      "key": "github-x64--1",
+      "runnerId": "github-x64",
+      "provider": "GitHub",
+      "arch": "x64",
+      "iteration": 1,
+      "status": "success",
+      "failedAt": null,
+      "queueSeconds": 3,
+      "jobSeconds": 670,
+      "workloadSeconds": 0,
+      "createdAt": "2026-11-24T03:11:36Z",
+      "startedAt": "2026-11-24T03:11:39Z",
+      "phases": [],
+      "runnerName": "GitHub Actions 1000003353",
+      "runnerGroup": "GitHub Actions",
+      "jobUrl": "https://github.com/getpiston/runner-benchmarks/actions/runs/45317737287/job/138188623945",
+      "host": {
+        "collectedAt": "2026-11-24T03:11:54+00:00",
+        "arch": "x86_64",
+        "kernel": "7.0.0-1014-aws",
+        "os": "Ubuntu 24.04.5 LTS",
+        "cpu": {
+          "model": "Intel(R) Xeon(R) 6975P-C",
+          "vendor": "GenuineIntel",
+          "logicalCpus": 4,
+          "threadsPerCore": 2,
+          "maxMHz": null,
+          "virtualization": "amazon",
+          "hypervisor": "KVM"
+        },
+        "memoryGiB": 15.33,
+        "memory": {
+          "swapGiB": 3.0,
+          "availableGiB": 14.41,
+          "swapDevices": [
+            {
+              "kind": "zram",
+              "sizeGiB": 3.0
+            }
+          ],
+          "overcommit": 0,
+          "swappiness": 60,
+          "zram": [
+            "zram0"
+          ]
+        },
+        "manufacturer": "Amazon EC2",
+        "product": "m8id.xlarge",
+        "storage": {
+          "workspace": {
+            "path": "/home/runner/work/runner-benchmarks/runner-benchmarks",
+            "source": "/dev/mapper/cow-root",
+            "target": "/",
+            "fstype": "ext4",
+            "options": "rw,relatime,discard,journal_async_commit,nobarrier,errors=remount-ro,commit=30,data=writeback",
+            "sizeGiB": 144.3,
+            "freeGiB": 88.1
+          },
+          "tmp": {
+            "path": "/tmp",
+            "source": "/dev/mapper/cow-root",
+            "target": "/",
+            "fstype": "ext4",
+            "options": "rw,relatime,discard,journal_async_commit,nobarrier,errors=remount-ro,commit=30,data=writeback",
+            "sizeGiB": 144.3,
+            "freeGiB": 88.1
+          },
+          "root": {
+            "path": "/",
+            "source": "/dev/mapper/cow-root",
+            "target": "/",
+            "fstype": "ext4",
+            "options": "rw,relatime,discard,journal_async_commit,nobarrier,errors=remount-ro,commit=30,data=writeback",
+            "sizeGiB": 144.3,
+            "freeGiB": 88.1
+          },
+          "docker": {
+            "path": "/var/lib/docker",
+            "source": "/dev/mapper/cow-root",
+            "target": "/",
+            "fstype": "ext4",
+            "options": "rw,relatime,discard,journal_async_commit,nobarrier,errors=remount-ro,commit=30,data=writeback",
+            "sizeGiB": 144.3,
+            "freeGiB": 88.1
+          },
+          "dockerDriver": "overlay2",
+          "devices": [
+            {
+              "name": "zram0",
+              "type": "disk",
+              "sizeGiB": 3.0,
+              "model": null,
+              "rotational": false,
+              "transport": null,
+              "fstype": null,
+              "mountpoint": "[SWAP]"
+            },
+            {
+              "name": "nvme0n1",
+              "type": "disk",
+              "sizeGiB": 150.0,
+              "model": "Amazon Elastic Block Store",
+              "rotational": false,
+              "transport": "nvme",
+              "fstype": null,
+              "mountpoint": null,
+              "children": [
+                {
+                  "name": "nvme0n1p1",
+                  "type": "part",
+                  "sizeGiB": 149.0,
+                  "model": null,
+                  "rotational": false,
+                  "transport": "nvme",
+                  "fstype": "ext4",
+                  "mountpoint": null,
+                  "children": [
+                    {
+                      "name": "cow-root",
+                      "type": "dm",
+                      "sizeGiB": 149.0,
+                      "model": null,
+                      "rotational": false,
+                      "transport": null,
+                      "fstype": "ext4",
+                      "mountpoint": "/"
+                    }
+                  ]
+                },
+                {
+                  "name": "nvme0n1p14",
+                  "type": "part",
+                  "sizeGiB": 0.0,
+                  "model": null,
+                  "rotational": false,
+                  "transport": "nvme",
+                  "fstype": null,
+                  "mountpoint": null
+                },
+                {
+                  "name": "nvme0n1p15",
+                  "type": "part",
+                  "sizeGiB": 0.1,
+                  "model": null,
+                  "rotational": false,
+                  "transport": "nvme",
+                  "fstype": "vfat",
+                  "mountpoint": "/boot/efi"
+                },
+                {
+                  "name": "nvme0n1p16",
+                  "type": "part",
+                  "sizeGiB": 0.9,
+                  "model": null,
+                  "rotational": false,
+                  "transport": "nvme",
+                  "fstype": "ext4",
+                  "mountpoint": "/boot"
+                }
+              ]
+            },
+            {
+              "name": "nvme1n1",
+              "type": "disk",
+              "sizeGiB": 220.7,
+              "model": "Amazon EC2 NVMe Instance Storage",
+              "rotational": false,
+              "transport": "nvme",
+              "fstype": "DM_snapshot_cow",
+              "mountpoint": null,
+              "children": [
+                {
+                  "name": "cow-root",
+                  "type": "dm",
+                  "sizeGiB": 149.0,
+                  "model": null,
+                  "rotational": false,
+                  "transport": null,
+                  "fstype": "ext4",
+                  "mountpoint": "/"
+                }
+              ]
+            }
+          ]
+        },
+        "ec2": {
+          "instanceType": "m8id.xlarge",
+          "lifecycle": "on-demand",
+          "amiId": "ami-05a0555a77ea05f9e",
+          "availabilityZone": "us-east-1a",
+          "region": "us-east-1"
+        },
+        "runsOn": null,
+        "network": {
+          "org": "AS14618 Amazon.com, Inc.",
+          "city": "Ashburn",
+          "region": "Virginia",
+          "country": "US"
+        },
+        "runner": {
+          "name": "GitHub Actions 1000003353",
+          "environment": "github-hosted",
+          "imageOS": "ubuntu24",
+          "imageVersion": "20261116.133.1"
+        }
+      },
+      "metrics": {
+        "cpu": {
+          "sysbenchSingleEps": 3320.77,
+          "sysbenchMultiEps": 6991.84,
+          "sevenZipMips": 18882,
+          "passmarkSingle": 3230.3098782577313,
+          "passmarkCpuMark": 8000.975256426284
+        },
+        "groupSeconds": {
+          "cpu": 66.9,
+          "passmark": 175.0,
+          "memory": 20.1,
+          "disk": 171.0,
+          "network": 1.5,
+          "docker": 11.9,
+          "postgres": 72.8
+        },
+        "memory": {
+          "readMiBps": 20257.36,
+          "writeMiBps": 6531.61
+        },
+        "disk": {
+          "directory": "/home/runner/work/runner-benchmarks/runner-benchmarks/.fio",
+          "seqRead": {
+            "MiBps": 451.4,
+            "iops": 450,
+            "p99us": 94896.1
+          },
+          "seqWrite": {
+            "MiBps": 216.3,
+            "iops": 215,
+            "p99us": 189792.3
+          },
+          "randRead": {
+            "MiBps": 262.1,
+            "iops": 67086,
+            "p99us": 2310.1
+          },
+          "randWrite": {
+            "MiBps": 130.2,
+            "iops": 33322,
+            "p99us": 10027.0
+          },
+          "randReadQd1": {
+            "MiBps": 41.0,
+            "iops": 10508,
+            "p99us": 261.1
+          },
+          "syncWrite": {
+            "MiBps": 31.0,
+            "iops": 7931,
+            "p99us": 79.4
+          }
+        },
+        "network": {
+          "cdnDownload": {
+            "MiBps": 100.2,
+            "MiB": 133.6,
+            "seconds": 1.33
+          },
+          "githubDownload": {
+            "MiBps": 311.9,
+            "MiB": 34.3,
+            "seconds": 0.11
+          }
+        },
+        "docker": {
+          "image": "node:24-bookworm",
+          "pullSeconds": 7.77,
+          "firstRunSeconds": 4.01
+        },
+        "postgres": {
+          "readOnlyTps": 58154.329169,
+          "readWriteTps": 6905.176027
+        }
+      }
+    },
+    {
+      "key": "piston-x64--1",
+      "runnerId": "piston-x64",
+      "provider": "Piston",
+      "arch": "x64",
+      "iteration": 1,
+      "status": "success",
+      "failedAt": null,
+      "queueSeconds": 12,
+      "jobSeconds": 449,
+      "workloadSeconds": 0,
+      "createdAt": "2026-11-24T03:11:36Z",
+      "startedAt": "2026-11-24T03:11:48Z",
+      "phases": [],
+      "runnerName": "piston-e44a62db-6951-431c-bb35-2e6447c8f5d4",
+      "runnerGroup": "piston",
+      "jobUrl": "https://github.com/getpiston/runner-benchmarks/actions/runs/45317737287/job/138188623904",
+      "host": {
+        "collectedAt": "2026-11-24T03:11:52+00:00",
+        "arch": "x86_64",
+        "kernel": "6.8.0-149-generic",
+        "os": "Ubuntu 24.04.5 LTS",
+        "cpu": {
+          "model": "Intel x86-64 CPU",
+          "vendor": "GenuineIntel",
+          "logicalCpus": 4,
+          "threadsPerCore": 1,
+          "maxMHz": null,
+          "virtualization": "kvm",
+          "hypervisor": "KVM"
+        },
+        "memoryGiB": 15.62,
+        "memory": {
+          "swapGiB": 4.0,
+          "availableGiB": 14.95,
+          "swapDevices": [
+            {
+              "kind": "file",
+              "sizeGiB": 4.0
+            }
+          ],
+          "overcommit": 0,
+          "swappiness": 10
+        },
+        "manufacturer": "Cloud Hypervisor",
+        "product": "cloud-hypervisor",
+        "storage": {
+          "workspace": {
+            "path": "/home/runner/_work/runner-benchmarks/runner-benchmarks",
+            "source": "/dev/vda",
+            "target": "/",
+            "fstype": "ext4",
+            "options": "rw,noatime,journal_async_commit,nobarrier,data=writeback",
+            "sizeGiB": 147.1,
+            "freeGiB": 82.1
+          },
+          "tmp": {
+            "path": "/tmp",
+            "source": "/dev/vda",
+            "target": "/",
+            "fstype": "ext4",
+            "options": "rw,noatime,journal_async_commit,nobarrier,data=writeback",
+            "sizeGiB": 147.1,
+            "freeGiB": 82.1
+          },
+          "root": {
+            "path": "/",
+            "source": "/dev/vda",
+            "target": "/",
+            "fstype": "ext4",
+            "options": "rw,noatime,journal_async_commit,nobarrier,data=writeback",
+            "sizeGiB": 147.1,
+            "freeGiB": 82.1
+          },
+          "docker": {
+            "path": "/var/lib/docker",
+            "source": "/dev/vda",
+            "target": "/",
+            "fstype": "ext4",
+            "options": "rw,noatime,journal_async_commit,nobarrier,data=writeback",
+            "sizeGiB": 147.1,
+            "freeGiB": 82.1
+          },
+          "dockerDriver": "overlay2",
+          "devices": [
+            {
+              "name": "vda",
+              "type": "disk",
+              "sizeGiB": 150.0,
+              "model": null,
+              "rotational": true,
+              "transport": "virtio",
+              "fstype": "ext4",
+              "mountpoint": "/"
+            }
+          ]
+        },
+        "ec2": null,
+        "runsOn": null,
+        "network": {
+          "org": "AS24940 Hetzner Online GmbH",
+          "city": "Falkenstein",
+          "region": "Saxony",
+          "country": "DE"
+        },
+        "runner": {
+          "name": "piston-e44a62db-6951-431c-bb35-2e6447c8f5d4",
+          "environment": "self-hosted",
+          "imageOS": "ubuntu24",
+          "imageVersion": null
+        }
+      },
+      "metrics": {
+        "cpu": {
+          "sysbenchSingleEps": 4161.4,
+          "sysbenchMultiEps": 20332.89,
+          "sevenZipMips": 31415,
+          "passmarkSingle": 4920.151746221611,
+          "passmarkCpuMark": 16452.951796391182
+        },
+        "groupSeconds": {
+          "cpu": 56.7,
+          "passmark": 136.8,
+          "memory": 15.6,
+          "disk": 139.9,
+          "network": 4.2,
+          "docker": 6.9,
+          "postgres": 70.0
+        },
+        "memory": {
+          "readMiBps": 33915.15,
+          "writeMiBps": 8121.43
+        },
+        "disk": {
+          "directory": "/home/runner/_work/runner-benchmarks/runner-benchmarks/.fio",
+          "seqRead": {
+            "MiBps": 9364.3,
+            "iops": 9363,
+            "p99us": 3620.9
+          },
+          "seqWrite": {
+            "MiBps": 4432.7,
+            "iops": 4431,
+            "p99us": 10682.4
+          },
+          "randRead": {
+            "MiBps": 2114.0,
+            "iops": 541188,
+            "p99us": 257.0
+          },
+          "randWrite": {
+            "MiBps": 698.9,
+            "iops": 178921,
+            "p99us": 5341.2
+          },
+          "randReadQd1": {
+            "MiBps": 327.4,
+            "iops": 83820,
+            "p99us": 10.7
+          },
+          "syncWrite": {
+            "MiBps": 113.5,
+            "iops": 29054,
+            "p99us": 14.8
+          }
+        },
+        "network": {
+          "cdnDownload": {
+            "MiBps": 36.5,
+            "MiB": 133.6,
+            "seconds": 3.66
+          },
+          "githubDownload": {
+            "MiBps": 67.1,
+            "MiB": 34.3,
+            "seconds": 0.51
+          }
+        },
+        "docker": {
+          "image": "node:24-bookworm",
+          "pullSeconds": 6.29,
+          "firstRunSeconds": 0.51
+        },
+        "postgres": {
+          "readOnlyTps": 121839.279168,
+          "readWriteTps": 15679.803047
+        }
+      }
+    },
+    {
+      "key": "piston-x64-8x32--1",
+      "runnerId": "piston-x64-8x32",
+      "provider": "Piston",
+      "arch": "x64",
+      "iteration": 1,
+      "status": "success",
+      "failedAt": null,
+      "queueSeconds": 12,
+      "jobSeconds": 434,
+      "workloadSeconds": 0,
+      "createdAt": "2026-11-24T03:11:36Z",
+      "startedAt": "2026-11-24T03:11:48Z",
+      "phases": [],
+      "runnerName": "piston-321be1dd-3fa0-4a97-b374-e9919f3ee8bd",
+      "runnerGroup": "piston",
+      "jobUrl": "https://github.com/getpiston/runner-benchmarks/actions/runs/45317737287/job/138188624260",
+      "host": {
+        "collectedAt": "2026-11-24T03:11:52+00:00",
+        "arch": "x86_64",
+        "kernel": "6.8.0-149-generic",
+        "os": "Ubuntu 24.04.5 LTS",
+        "cpu": {
+          "model": "Intel x86-64 CPU",
+          "vendor": "GenuineIntel",
+          "logicalCpus": 8,
+          "threadsPerCore": 1,
+          "maxMHz": null,
+          "virtualization": "kvm",
+          "hypervisor": "KVM"
+        },
+        "memoryGiB": 31.34,
+        "memory": {
+          "swapGiB": 4.0,
+          "availableGiB": 30.46,
+          "swapDevices": [
+            {
+              "kind": "file",
+              "sizeGiB": 4.0
+            }
+          ],
+          "overcommit": 0,
+          "swappiness": 10
+        },
+        "manufacturer": "Cloud Hypervisor",
+        "product": "cloud-hypervisor",
+        "storage": {
+          "workspace": {
+            "path": "/home/runner/_work/runner-benchmarks/runner-benchmarks",
+            "source": "/dev/vda",
+            "target": "/",
+            "fstype": "ext4",
+            "options": "rw,noatime,journal_async_commit,nobarrier,data=writeback",
+            "sizeGiB": 294.7,
+            "freeGiB": 223.8
+          },
+          "tmp": {
+            "path": "/tmp",
+            "source": "/dev/vda",
+            "target": "/",
+            "fstype": "ext4",
+            "options": "rw,noatime,journal_async_commit,nobarrier,data=writeback",
+            "sizeGiB": 294.7,
+            "freeGiB": 223.8
+          },
+          "root": {
+            "path": "/",
+            "source": "/dev/vda",
+            "target": "/",
+            "fstype": "ext4",
+            "options": "rw,noatime,journal_async_commit,nobarrier,data=writeback",
+            "sizeGiB": 294.7,
+            "freeGiB": 223.8
+          },
+          "docker": {
+            "path": "/var/lib/docker",
+            "source": "/dev/vda",
+            "target": "/",
+            "fstype": "ext4",
+            "options": "rw,noatime,journal_async_commit,nobarrier,data=writeback",
+            "sizeGiB": 294.7,
+            "freeGiB": 223.8
+          },
+          "dockerDriver": "overlay2",
+          "devices": [
+            {
+              "name": "vda",
+              "type": "disk",
+              "sizeGiB": 300.0,
+              "model": null,
+              "rotational": true,
+              "transport": "virtio",
+              "fstype": "ext4",
+              "mountpoint": "/"
+            }
+          ]
+        },
+        "ec2": null,
+        "runsOn": null,
+        "network": {
+          "org": "AS60558 PHOENIX NAP, LLC.",
+          "city": "Amsterdam",
+          "region": "North Holland",
+          "country": "NL"
+        },
+        "runner": {
+          "name": "piston-321be1dd-3fa0-4a97-b374-e9919f3ee8bd",
+          "environment": "self-hosted",
+          "imageOS": "ubuntu24",
+          "imageVersion": null
+        }
+      },
+      "metrics": {
+        "cpu": {
+          "sysbenchSingleEps": 5126.07,
+          "sysbenchMultiEps": 38470.86,
+          "sevenZipMips": 60895,
+          "passmarkSingle": 4829.632489284853,
+          "passmarkCpuMark": 28782.67841910754
+        },
+        "groupSeconds": {
+          "cpu": 57.1,
+          "passmark": 136.0,
+          "memory": 9.4,
+          "disk": 136.7,
+          "network": 2.4,
+          "docker": 6.2,
+          "postgres": 69.1
+        },
+        "memory": {
+          "readMiBps": 57510.83,
+          "writeMiBps": 13365.98
+        },
+        "disk": {
+          "directory": "/home/runner/_work/runner-benchmarks/runner-benchmarks/.fio",
+          "seqRead": {
+            "MiBps": 10202.6,
+            "iops": 10201,
+            "p99us": 3260.4
+          },
+          "seqWrite": {
+            "MiBps": 7253.0,
+            "iops": 7251,
+            "p99us": 4948.0
+          },
+          "randRead": {
+            "MiBps": 2246.7,
+            "iops": 575157,
+            "p99us": 238.6
+          },
+          "randWrite": {
+            "MiBps": 1056.0,
+            "iops": 270335,
+            "p99us": 5013.5
+          },
+          "randReadQd1": {
+            "MiBps": 349.5,
+            "iops": 89468,
+            "p99us": 11.2
+          },
+          "syncWrite": {
+            "MiBps": 103.3,
+            "iops": 26453,
+            "p99us": 16.3
+          }
+        },
+        "network": {
+          "cdnDownload": {
+            "MiBps": 57.8,
+            "MiB": 133.6,
+            "seconds": 2.31
+          },
+          "githubDownload": {
+            "MiBps": 335.6,
+            "MiB": 34.3,
+            "seconds": 0.1
+          }
+        },
+        "docker": {
+          "image": "node:24-bookworm",
+          "pullSeconds": 5.83,
+          "firstRunSeconds": 0.35
+        },
+        "postgres": {
+          "readOnlyTps": 140923.155707,
+          "readWriteTps": 17772.671888
+        }
+      }
+    },
+    {
+      "key": "piston-x64-2x8--1",
+      "runnerId": "piston-x64-2x8",
+      "provider": "Piston",
+      "arch": "x64",
+      "iteration": 1,
+      "status": "success",
+      "failedAt": null,
+      "queueSeconds": 12,
+      "jobSeconds": 448,
+      "workloadSeconds": 0,
+      "createdAt": "2026-11-24T03:11:36Z",
+      "startedAt": "2026-11-24T03:11:48Z",
+      "phases": [],
+      "runnerName": "piston-1fc725da-748b-4374-a38c-ceed2b5521a3",
+      "runnerGroup": "piston",
+      "jobUrl": "https://github.com/getpiston/runner-benchmarks/actions/runs/45317737287/job/138188623916",
+      "host": {
+        "collectedAt": "2026-11-24T03:11:53+00:00",
+        "arch": "x86_64",
+        "kernel": "6.8.0-149-generic",
+        "os": "Ubuntu 24.04.5 LTS",
+        "cpu": {
+          "model": "Intel x86-64 CPU",
+          "vendor": "GenuineIntel",
+          "logicalCpus": 2,
+          "threadsPerCore": 1,
+          "maxMHz": null,
+          "virtualization": "kvm",
+          "hypervisor": "KVM"
+        },
+        "memoryGiB": 7.76,
+        "memory": {
+          "swapGiB": 4.0,
+          "availableGiB": 7.14,
+          "swapDevices": [
+            {
+              "kind": "file",
+              "sizeGiB": 4.0
+            }
+          ],
+          "overcommit": 0,
+          "swappiness": 10
+        },
+        "manufacturer": "Cloud Hypervisor",
+        "product": "cloud-hypervisor",
+        "storage": {
+          "workspace": {
+            "path": "/home/runner/_work/runner-benchmarks/runner-benchmarks",
+            "source": "/dev/vda",
+            "target": "/",
+            "fstype": "ext4",
+            "options": "rw,noatime,journal_async_commit,nobarrier,data=writeback",
+            "sizeGiB": 97.9,
+            "freeGiB": 35.0
+          },
+          "tmp": {
+            "path": "/tmp",
+            "source": "/dev/vda",
+            "target": "/",
+            "fstype": "ext4",
+            "options": "rw,noatime,journal_async_commit,nobarrier,data=writeback",
+            "sizeGiB": 97.9,
+            "freeGiB": 35.0
+          },
+          "root": {
+            "path": "/",
+            "source": "/dev/vda",
+            "target": "/",
+            "fstype": "ext4",
+            "options": "rw,noatime,journal_async_commit,nobarrier,data=writeback",
+            "sizeGiB": 97.9,
+            "freeGiB": 35.0
+          },
+          "docker": {
+            "path": "/var/lib/docker",
+            "source": "/dev/vda",
+            "target": "/",
+            "fstype": "ext4",
+            "options": "rw,noatime,journal_async_commit,nobarrier,data=writeback",
+            "sizeGiB": 97.9,
+            "freeGiB": 35.0
+          },
+          "dockerDriver": "overlay2",
+          "devices": [
+            {
+              "name": "vda",
+              "type": "disk",
+              "sizeGiB": 100.0,
+              "model": null,
+              "rotational": true,
+              "transport": "virtio",
+              "fstype": "ext4",
+              "mountpoint": "/"
+            }
+          ]
+        },
+        "ec2": null,
+        "runsOn": null,
+        "network": {
+          "org": "AS24940 Hetzner Online GmbH",
+          "city": "Falkenstein",
+          "region": "Saxony",
+          "country": "DE"
+        },
+        "runner": {
+          "name": "piston-1fc725da-748b-4374-a38c-ceed2b5521a3",
+          "environment": "self-hosted",
+          "imageOS": "ubuntu24",
+          "imageVersion": null
+        }
+      },
+      "metrics": {
+        "cpu": {
+          "sysbenchSingleEps": 4157.02,
+          "sysbenchMultiEps": 8290.93,
+          "sevenZipMips": 15354,
+          "passmarkSingle": 4823.935677437578,
+          "passmarkCpuMark": 8369.902804390347
+        },
+        "groupSeconds": {
+          "cpu": 57.0,
+          "passmark": 136.9,
+          "memory": 16.8,
+          "disk": 137.9,
+          "network": 3.4,
+          "docker": 7.4,
+          "postgres": 70.0
+        },
+        "memory": {
+          "readMiBps": 17977.11,
+          "writeMiBps": 9217.08
+        },
+        "disk": {
+          "directory": "/home/runner/_work/runner-benchmarks/runner-benchmarks/.fio",
+          "seqRead": {
+            "MiBps": 11446.4,
+            "iops": 11445,
+            "p99us": 3031.0
+          },
+          "seqWrite": {
+            "MiBps": 5055.9,
+            "iops": 5054,
+            "p99us": 5144.6
+          },
+          "randRead": {
+            "MiBps": 2098.8,
+            "iops": 537289,
+            "p99us": 297.0
+          },
+          "randWrite": {
+            "MiBps": 406.1,
+            "iops": 103945,
+            "p99us": 4112.4
+          },
+          "randReadQd1": {
+            "MiBps": 333.6,
+            "iops": 85391,
+            "p99us": 10.9
+          },
+          "syncWrite": {
+            "MiBps": 125.1,
+            "iops": 32024,
+            "p99us": 14.4
+          }
+        },
+        "network": {
+          "cdnDownload": {
+            "MiBps": 46.2,
+            "MiB": 133.6,
+            "seconds": 2.89
+          },
+          "githubDownload": {
+            "MiBps": 66.1,
+            "MiB": 34.3,
+            "seconds": 0.52
+          }
+        },
+        "docker": {
+          "image": "node:24-bookworm",
+          "pullSeconds": 6.97,
+          "firstRunSeconds": 0.34
+        },
+        "postgres": {
+          "readOnlyTps": 64541.366322,
+          "readWriteTps": 8305.309115
+        }
+      }
+    }
+  ]
+}

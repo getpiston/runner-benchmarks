@@ -34,6 +34,23 @@
       "origin": "workflow_dispatch"
     },
     {
+      "path": "hardware/2026-11-24-45317737287-1.json",
+      "suite": "hardware",
+      "date": "2026-11-24",
+      "runId": 45317737287,
+      "attempt": 1,
+      "jobs": 4,
+      "succeeded": 4,
+      "runners": [
+        "github-x64",
+        "piston-x64",
+        "piston-x64-2x8",
+        "piston-x64-8x32"
+      ],
+      "subset": true,
+      "origin": "workflow_dispatch"
+    },
+    {
       "path": "docker/2026-11-24-45317734084-1.json",
       "suite": "docker",
       "date": "2026-11-24",
