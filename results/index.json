@@ -51,6 +51,23 @@
       "origin": "workflow_dispatch"
     },
     {
+      "path": "rust/2026-11-24-45317726896-1.json",
+      "suite": "rust",
+      "date": "2026-11-24",
+      "runId": 45317726896,
+      "attempt": 1,
+      "jobs": 4,
+      "succeeded": 4,
+      "runners": [
+        "github-x64",
+        "piston-x64",
+        "piston-x64-2x8",
+        "piston-x64-8x32"
+      ],
+      "subset": true,
+      "origin": "workflow_dispatch"
+    },
+    {
       "path": "cpu-daily/2026-11-23-45135527077-1.json",
       "suite": "cpu-daily",
       "date": "2026-11-23",
