@@ -2,6 +2,23 @@
   "schemaVersion": 1,
   "files": [
     {
+      "path": "cache/2026-11-24-45317740476-1.json",
+      "suite": "cache",
+      "date": "2026-11-24",
+      "runId": 45317740476,
+      "attempt": 1,
+      "jobs": 4,
+      "succeeded": 4,
+      "runners": [
+        "github-x64.actions-cache",
+        "piston-x64-2x8.actions-cache",
+        "piston-x64-8x32.actions-cache",
+        "piston-x64.actions-cache"
+      ],
+      "subset": true,
+      "origin": "workflow_dispatch"
+    },
+    {
       "path": "node/2026-11-24-45317730559-1.json",
       "suite": "node",
       "date": "2026-11-24",
