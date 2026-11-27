@@ -2,6 +2,21 @@
   "schemaVersion": 1,
   "files": [
     {
+      "path": "cpu-daily/2026-11-27-46075814530-1.json",
+      "suite": "cpu-daily",
+      "date": "2026-11-27",
+      "runId": 46075814530,
+      "attempt": 1,
+      "jobs": 2,
+      "succeeded": 2,
+      "runners": [
+        "github-x64",
+        "piston-x64-2x8"
+      ],
+      "subset": true,
+      "origin": "workflow_dispatch"
+    },
+    {
       "path": "cache/2026-11-27-46075811471-1.json",
       "suite": "cache",
       "date": "2026-11-27",
