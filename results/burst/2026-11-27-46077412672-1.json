@@ -1,0 +1,1940 @@
+{
+  "schemaVersion": 1,
+  "suite": "burst",
+  "workload": {
+    "name": "Burst queue",
+    "description": "A burst of 15 identical jobs per runner, all queued at the same instant, each holding its runner for 60 seconds. Since 4 Oct 2026 each RunsOn job requests its own label (runs-on=<run id>-<runner id>-<iteration>), so a RunsOn runner launched for one job can no longer be taken by a sibling; before, a runner missing from a burst left one job waiting for RunsOn to retry, minutes later. Queue time shows how fast a provider absorbs a spike: how quickly it scales, and the concurrency limits of the plan this account is on. Runs on its own, never alongside another suite, in shards of one runner per provider, one shard after another (a provider's x64 and arm64 runners never share a shard, since some providers cap concurrency per account).",
+    "holdSeconds": 60,
+    "shards": "one runner per provider per shard (a provider's x64 and arm64 runners in different shards)"
+  },
+  "run": {
+    "id": 46077412672,
+    "attempt": 1,
+    "date": "2026-11-27",
+    "startedAt": "2026-11-27T22:33:54Z",
+    "url": "https://github.com/getpiston/runner-benchmarks/actions/runs/46077412672",
+    "sha": "81b1a1e78da9160c6d2b14fa235f7a7f2b66e94e",
+    "event": "workflow_dispatch",
+    "repository": "getpiston/runner-benchmarks"
+  },
+  "selection": {
+    "event": "workflow_dispatch",
+    "source": "inputs",
+    "origin": {
+      "event": "workflow_dispatch",
+      "source": "inputs",
+      "runId": 46076978122
+    },
+    "runners": "piston-x64-2x8,piston-x64,piston-x64-8x32,github-x64",
+    "arch": "all",
+    "iterations": 15,
+    "defaultRunners": 105,
+    "subset": true,
+    "missingDefaultRunners": [
+      "github-x64-8x32",
+      "github-x64-2x8",
+      "github-arm64",
+      "github-arm64-2x8",
+      "runson-m8azn-x64",
+      "runson-m8a-x64",
+      "runson-m8id-x64",
+      "runson-r8a-tmpfs-x64",
+      "runson-r8a-2xlarge-tmpfs-x64",
+      "runson-m9g-arm64",
+      "runson-m9gd-arm64",
+      "runson-c8g-arm64-4x8",
+      "runson-c8g-arm64-8x16",
+      "runson-m9g-arm64-8x32",
+      "blacksmith-x64",
+      "blacksmith-x64-8x32",
+      "blacksmith-x64-2x8",
+      "blacksmith-arm64",
+      "blacksmith-arm64-8x32",
+      "blacksmith-arm64-2x6",
+      "namespace-x64",
+      "namespace-x64-4x8",
+      "namespace-x64-8x16",
+      "namespace-x64-8x32",
+      "namespace-x64-2x8",
+      "namespace-arm64",
+      "namespace-arm64-4x8",
+      "namespace-arm64-apple",
+      "namespace-arm64-8x16",
+      "namespace-arm64-8x32",
+      "namespace-arm64-2x8",
+      "namespace-arm64-apple-2x8",
+      "warpbuild-x64",
+      "warpbuild-x64-8x32",
+      "warpbuild-x64-2x",
+      "warpbuild-arm64",
+      "warpbuild-arm64-xfast",
+      "warpbuild-arm64-xfast-12x",
+      "warpbuild-arm64-8x32",
+      "warpbuild-arm64-2x",
+      "ubicloud-x64",
+      "ubicloud-premium-x64",
+      "ubicloud-x64-8x32",
+      "ubicloud-premium-x64-8x32",
+      "ubicloud-x64-2",
+      "ubicloud-premium-x64-2",
+      "ubicloud-arm64",
+      "ubicloud-arm64-8x32",
+      "ubicloud-arm64-2",
+      "avrea-x64",
+      "avrea-x64-8x32",
+      "avrea-x64-2",
+      "avrea-arm64",
+      "avrea-arm64-8x32",
+      "avrea-arm64-2",
+      "starsling-x64",
+      "starsling-x64-8x32",
+      "sengi-x64",
+      "sengi-x64-8x32",
+      "sengi-x64-2",
+      "sengi-premium-x64",
+      "sengi-premium-x64-8x32",
+      "sengi-premium-x64-2",
+      "codebuild-x64",
+      "codebuild-x64-8x16",
+      "codebuild-x64-2x3",
+      "boat-x64-2x4",
+      "boat-x64",
+      "boat-x64-8x16",
+      "runson-m8azn-gp3tuned-x64",
+      "runson-c8a-x64-4x8",
+      "runson-c8a-x64-8x16",
+      "runson-i7i-large",
+      "runson-i7i-xlarge",
+      "runson-i7i-2xlarge",
+      "runson-m8id-large",
+      "runson-m8id-2xlarge",
+      "runson-m9gd-large",
+      "runson-m9gd-2xlarge",
+      "runson-m9g-xlarge-tmpfs",
+      "runson-r9g-xlarge-tmpfs",
+      "runson-m9g-2xlarge-tmpfs",
+      "runson-c8g-large",
+      "runson-m9g-large",
+      "runson-m8azn-large",
+      "runson-m8azn-3xlarge",
+      "runson-m8a-2xlarge",
+      "runson-m8a-2xlarge-gp3tuned",
+      "runson-m8a-2xlarge-tmpfs",
+      "runson-c8a-large",
+      "runson-m8a-large",
+      "runson-r8a-large",
+      "runson-r8a-large-tmpfs",
+      "runson-r9g-large-tmpfs",
+      "runson-t8i-medium",
+      "runson-m8i-large",
+      "runson-m8i-flex-large",
+      "runson-m8i-xlarge",
+      "runson-m8i-flex-xlarge",
+      "runson-m8i-2xlarge",
+      "runson-m8i-flex-2xlarge"
+    ],
+    "shard": 3,
+    "shards": 3
+  },
+  "runners": [
+    {
+      "id": "piston-x64-2x8",
+      "provider": "Piston",
+      "arch": "x64",
+      "vcpu": 2,
+      "ramGiB": 8,
+      "label": "piston-2cpu-ubuntu-2402",
+      "variant": "2 CPUs",
+      "suiteSkips": {
+        "docker": "Not run: the PostHog Docker build needs more than 8 GB of memory; it ran out of memory on 8 GB runners."
+      }
+    }
+  ],
+  "results": [
+    {
+      "key": "piston-x64-2x8--1",
+      "runnerId": "piston-x64-2x8",
+      "provider": "Piston",
+      "arch": "x64",
+      "iteration": 1,
+      "status": "success",
+      "failedAt": null,
+      "queueSeconds": 8,
+      "jobSeconds": 71,
+      "workloadSeconds": 60,
+      "createdAt": "2026-11-27T22:34:08Z",
+      "startedAt": "2026-11-27T22:34:16Z",
+      "phases": [
+        {
+          "name": "hold",
+          "seconds": 60,
+          "status": "success"
+        }
+      ],
+      "runnerName": "piston-9ece7170-9fdc-4df3-8b1f-38d84cfd639c",
+      "runnerGroup": "piston",
+      "jobUrl": "https://github.com/getpiston/runner-benchmarks/actions/runs/46077412672/job/140768343188",
+      "host": {
+        "collectedAt": "2026-11-27T22:34:20+00:00",
+        "arch": "x86_64",
+        "kernel": "6.8.0-151-generic",
+        "os": "Ubuntu 24.04.5 LTS",
+        "cpu": {
+          "model": "Intel x86-64 CPU",
+          "vendor": "GenuineIntel",
+          "logicalCpus": 2,
+          "threadsPerCore": 1,
+          "maxMHz": null,
+          "virtualization": "kvm",
+          "hypervisor": "KVM"
+        },
+        "memoryGiB": 7.76,
+        "memory": {
+          "swapGiB": 4.0,
+          "availableGiB": 7.14,
+          "swapDevices": [
+            {
+              "kind": "file",
+              "sizeGiB": 4.0
+            }
+          ],
+          "overcommit": 0,
+          "swappiness": 10
+        },
+        "manufacturer": "Cloud Hypervisor",
+        "product": "cloud-hypervisor",
+        "storage": {
+          "workspace": {
+            "path": "/home/runner/_work/runner-benchmarks/runner-benchmarks",
+            "source": "/dev/vda",
+            "target": "/",
+            "fstype": "ext4",
+            "options": "rw,noatime,journal_async_commit,nobarrier,data=writeback",
+            "sizeGiB": 97.9,
+            "freeGiB": 33.9
+          },
+          "tmp": {
+            "path": "/tmp",
+            "source": "/dev/vda",
+            "target": "/",
+            "fstype": "ext4",
+            "options": "rw,noatime,journal_async_commit,nobarrier,data=writeback",
+            "sizeGiB": 97.9,
+            "freeGiB": 33.9
+          },
+          "root": {
+            "path": "/",
+            "source": "/dev/vda",
+            "target": "/",
+            "fstype": "ext4",
+            "options": "rw,noatime,journal_async_commit,nobarrier,data=writeback",
+            "sizeGiB": 97.9,
+            "freeGiB": 33.9
+          },
+          "docker": {
+            "path": "/var/lib/docker",
+            "source": "/dev/vda",
+            "target": "/",
+            "fstype": "ext4",
+            "options": "rw,noatime,journal_async_commit,nobarrier,data=writeback",
+            "sizeGiB": 97.9,
+            "freeGiB": 33.9
+          },
+          "dockerDriver": "overlay2",
+          "devices": [
+            {
+              "name": "vda",
+              "type": "disk",
+              "sizeGiB": 100.0,
+              "model": null,
+              "rotational": true,
+              "transport": "virtio",
+              "fstype": "ext4",
+              "mountpoint": "/"
+            }
+          ]
+        },
+        "ec2": null,
+        "runsOn": null,
+        "network": {
+          "org": "AS24940 Hetzner Online GmbH",
+          "city": "Falkenstein",
+          "region": "Saxony",
+          "country": "DE"
+        },
+        "runner": {
+          "name": "piston-9ece7170-9fdc-4df3-8b1f-38d84cfd639c",
+          "environment": "self-hosted",
+          "imageOS": "ubuntu24",
+          "imageVersion": null
+        }
+      }
+    },
+    {
+      "key": "piston-x64-2x8--2",
+      "runnerId": "piston-x64-2x8",
+      "provider": "Piston",
+      "arch": "x64",
+      "iteration": 2,
+      "status": "success",
+      "failedAt": null,
+      "queueSeconds": 8,
+      "jobSeconds": 71,
+      "workloadSeconds": 60,
+      "createdAt": "2026-11-27T22:34:08Z",
+      "startedAt": "2026-11-27T22:34:16Z",
+      "phases": [
+        {
+          "name": "hold",
+          "seconds": 60,
+          "status": "success"
+        }
+      ],
+      "runnerName": "piston-f2ad015a-52d6-4e91-91fc-db39e1ce18b7",
+      "runnerGroup": "piston",
+      "jobUrl": "https://github.com/getpiston/runner-benchmarks/actions/runs/46077412672/job/140768343241",
+      "host": {
+        "collectedAt": "2026-11-27T22:34:20+00:00",
+        "arch": "x86_64",
+        "kernel": "6.8.0-151-generic",
+        "os": "Ubuntu 24.04.5 LTS",
+        "cpu": {
+          "model": "Intel x86-64 CPU",
+          "vendor": "GenuineIntel",
+          "logicalCpus": 2,
+          "threadsPerCore": 1,
+          "maxMHz": null,
+          "virtualization": "kvm",
+          "hypervisor": "KVM"
+        },
+        "memoryGiB": 7.76,
+        "memory": {
+          "swapGiB": 4.0,
+          "availableGiB": 7.17,
+          "swapDevices": [
+            {
+              "kind": "file",
+              "sizeGiB": 4.0
+            }
+          ],
+          "overcommit": 0,
+          "swappiness": 10
+        },
+        "manufacturer": "Cloud Hypervisor",
+        "product": "cloud-hypervisor",
+        "storage": {
+          "workspace": {
+            "path": "/home/runner/_work/runner-benchmarks/runner-benchmarks",
+            "source": "/dev/vda",
+            "target": "/",
+            "fstype": "ext4",
+            "options": "rw,noatime,journal_async_commit,nobarrier,data=writeback",
+            "sizeGiB": 97.9,
+            "freeGiB": 33.9
+          },
+          "tmp": {
+            "path": "/tmp",
+            "source": "/dev/vda",
+            "target": "/",
+            "fstype": "ext4",
+            "options": "rw,noatime,journal_async_commit,nobarrier,data=writeback",
+            "sizeGiB": 97.9,
+            "freeGiB": 33.9
+          },
+          "root": {
+            "path": "/",
+            "source": "/dev/vda",
+            "target": "/",
+            "fstype": "ext4",
+            "options": "rw,noatime,journal_async_commit,nobarrier,data=writeback",
+            "sizeGiB": 97.9,
+            "freeGiB": 33.9
+          },
+          "docker": {
+            "path": "/var/lib/docker",
+            "source": "/dev/vda",
+            "target": "/",
+            "fstype": "ext4",
+            "options": "rw,noatime,journal_async_commit,nobarrier,data=writeback",
+            "sizeGiB": 97.9,
+            "freeGiB": 33.9
+          },
+          "dockerDriver": "overlay2",
+          "devices": [
+            {
+              "name": "vda",
+              "type": "disk",
+              "sizeGiB": 100.0,
+              "model": null,
+              "rotational": true,
+              "transport": "virtio",
+              "fstype": "ext4",
+              "mountpoint": "/"
+            }
+          ]
+        },
+        "ec2": null,
+        "runsOn": null,
+        "network": {
+          "org": "AS24940 Hetzner Online GmbH",
+          "city": "Falkenstein",
+          "region": "Saxony",
+          "country": "DE"
+        },
+        "runner": {
+          "name": "piston-f2ad015a-52d6-4e91-91fc-db39e1ce18b7",
+          "environment": "self-hosted",
+          "imageOS": "ubuntu24",
+          "imageVersion": null
+        }
+      }
+    },
+    {
+      "key": "piston-x64-2x8--3",
+      "runnerId": "piston-x64-2x8",
+      "provider": "Piston",
+      "arch": "x64",
+      "iteration": 3,
+      "status": "success",
+      "failedAt": null,
+      "queueSeconds": 8,
+      "jobSeconds": 71,
+      "workloadSeconds": 60,
+      "createdAt": "2026-11-27T22:34:08Z",
+      "startedAt": "2026-11-27T22:34:16Z",
+      "phases": [
+        {
+          "name": "hold",
+          "seconds": 60,
+          "status": "success"
+        }
+      ],
+      "runnerName": "piston-1763775e-7238-4083-8e31-b076be20d660",
+      "runnerGroup": "piston",
+      "jobUrl": "https://github.com/getpiston/runner-benchmarks/actions/runs/46077412672/job/140768343222",
+      "host": {
+        "collectedAt": "2026-11-27T22:34:21+00:00",
+        "arch": "x86_64",
+        "kernel": "6.8.0-151-generic",
+        "os": "Ubuntu 24.04.5 LTS",
+        "cpu": {
+          "model": "Intel x86-64 CPU",
+          "vendor": "GenuineIntel",
+          "logicalCpus": 2,
+          "threadsPerCore": 1,
+          "maxMHz": null,
+          "virtualization": "kvm",
+          "hypervisor": "KVM"
+        },
+        "memoryGiB": 7.76,
+        "memory": {
+          "swapGiB": 4.0,
+          "availableGiB": 7.16,
+          "swapDevices": [
+            {
+              "kind": "file",
+              "sizeGiB": 4.0
+            }
+          ],
+          "overcommit": 0,
+          "swappiness": 10
+        },
+        "manufacturer": "Cloud Hypervisor",
+        "product": "cloud-hypervisor",
+        "storage": {
+          "workspace": {
+            "path": "/home/runner/_work/runner-benchmarks/runner-benchmarks",
+            "source": "/dev/vda",
+            "target": "/",
+            "fstype": "ext4",
+            "options": "rw,noatime,journal_async_commit,nobarrier,data=writeback",
+            "sizeGiB": 97.9,
+            "freeGiB": 33.9
+          },
+          "tmp": {
+            "path": "/tmp",
+            "source": "/dev/vda",
+            "target": "/",
+            "fstype": "ext4",
+            "options": "rw,noatime,journal_async_commit,nobarrier,data=writeback",
+            "sizeGiB": 97.9,
+            "freeGiB": 33.9
+          },
+          "root": {
+            "path": "/",
+            "source": "/dev/vda",
+            "target": "/",
+            "fstype": "ext4",
+            "options": "rw,noatime,journal_async_commit,nobarrier,data=writeback",
+            "sizeGiB": 97.9,
+            "freeGiB": 33.9
+          },
+          "docker": {
+            "path": "/var/lib/docker",
+            "source": "/dev/vda",
+            "target": "/",
+            "fstype": "ext4",
+            "options": "rw,noatime,journal_async_commit,nobarrier,data=writeback",
+            "sizeGiB": 97.9,
+            "freeGiB": 33.9
+          },
+          "dockerDriver": "overlay2",
+          "devices": [
+            {
+              "name": "vda",
+              "type": "disk",
+              "sizeGiB": 100.0,
+              "model": null,
+              "rotational": true,
+              "transport": "virtio",
+              "fstype": "ext4",
+              "mountpoint": "/"
+            }
+          ]
+        },
+        "ec2": null,
+        "runsOn": null,
+        "network": {
+          "org": "AS24940 Hetzner Online GmbH",
+          "city": "Falkenstein",
+          "region": "Saxony",
+          "country": "DE"
+        },
+        "runner": {
+          "name": "piston-1763775e-7238-4083-8e31-b076be20d660",
+          "environment": "self-hosted",
+          "imageOS": "ubuntu24",
+          "imageVersion": null
+        }
+      }
+    },
+    {
+      "key": "piston-x64-2x8--4",
+      "runnerId": "piston-x64-2x8",
+      "provider": "Piston",
+      "arch": "x64",
+      "iteration": 4,
+      "status": "success",
+      "failedAt": null,
+      "queueSeconds": 8,
+      "jobSeconds": 70,
+      "workloadSeconds": 60,
+      "createdAt": "2026-11-27T22:34:08Z",
+      "startedAt": "2026-11-27T22:34:16Z",
+      "phases": [
+        {
+          "name": "hold",
+          "seconds": 60,
+          "status": "success"
+        }
+      ],
+      "runnerName": "piston-afd1e71c-a3a5-4543-a045-00385e8b1212",
+      "runnerGroup": "piston",
+      "jobUrl": "https://github.com/getpiston/runner-benchmarks/actions/runs/46077412672/job/140768343198",
+      "host": {
+        "collectedAt": "2026-11-27T22:34:20+00:00",
+        "arch": "x86_64",
+        "kernel": "6.8.0-151-generic",
+        "os": "Ubuntu 24.04.5 LTS",
+        "cpu": {
+          "model": "Intel x86-64 CPU",
+          "vendor": "GenuineIntel",
+          "logicalCpus": 2,
+          "threadsPerCore": 1,
+          "maxMHz": null,
+          "virtualization": "kvm",
+          "hypervisor": "KVM"
+        },
+        "memoryGiB": 7.76,
+        "memory": {
+          "swapGiB": 4.0,
+          "availableGiB": 7.15,
+          "swapDevices": [
+            {
+              "kind": "file",
+              "sizeGiB": 4.0
+            }
+          ],
+          "overcommit": 0,
+          "swappiness": 10
+        },
+        "manufacturer": "Cloud Hypervisor",
+        "product": "cloud-hypervisor",
+        "storage": {
+          "workspace": {
+            "path": "/home/runner/_work/runner-benchmarks/runner-benchmarks",
+            "source": "/dev/vda",
+            "target": "/",
+            "fstype": "ext4",
+            "options": "rw,noatime,journal_async_commit,nobarrier,data=writeback",
+            "sizeGiB": 97.9,
+            "freeGiB": 33.9
+          },
+          "tmp": {
+            "path": "/tmp",
+            "source": "/dev/vda",
+            "target": "/",
+            "fstype": "ext4",
+            "options": "rw,noatime,journal_async_commit,nobarrier,data=writeback",
+            "sizeGiB": 97.9,
+            "freeGiB": 33.9
+          },
+          "root": {
+            "path": "/",
+            "source": "/dev/vda",
+            "target": "/",
+            "fstype": "ext4",
+            "options": "rw,noatime,journal_async_commit,nobarrier,data=writeback",
+            "sizeGiB": 97.9,
+            "freeGiB": 33.9
+          },
+          "docker": {
+            "path": "/var/lib/docker",
+            "source": "/dev/vda",
+            "target": "/",
+            "fstype": "ext4",
+            "options": "rw,noatime,journal_async_commit,nobarrier,data=writeback",
+            "sizeGiB": 97.9,
+            "freeGiB": 33.9
+          },
+          "dockerDriver": "overlay2",
+          "devices": [
+            {
+              "name": "vda",
+              "type": "disk",
+              "sizeGiB": 100.0,
+              "model": null,
+              "rotational": true,
+              "transport": "virtio",
+              "fstype": "ext4",
+              "mountpoint": "/"
+            }
+          ]
+        },
+        "ec2": null,
+        "runsOn": null,
+        "network": {
+          "org": "AS24940 Hetzner Online GmbH",
+          "city": "Falkenstein",
+          "region": "Saxony",
+          "country": "DE"
+        },
+        "runner": {
+          "name": "piston-afd1e71c-a3a5-4543-a045-00385e8b1212",
+          "environment": "self-hosted",
+          "imageOS": "ubuntu24",
+          "imageVersion": null
+        }
+      }
+    },
+    {
+      "key": "piston-x64-2x8--5",
+      "runnerId": "piston-x64-2x8",
+      "provider": "Piston",
+      "arch": "x64",
+      "iteration": 5,
+      "status": "success",
+      "failedAt": null,
+      "queueSeconds": 8,
+      "jobSeconds": 71,
+      "workloadSeconds": 60,
+      "createdAt": "2026-11-27T22:34:08Z",
+      "startedAt": "2026-11-27T22:34:16Z",
+      "phases": [
+        {
+          "name": "hold",
+          "seconds": 60,
+          "status": "success"
+        }
+      ],
+      "runnerName": "piston-a1234d80-5a6a-421c-a8ed-bf01a04a1fe4",
+      "runnerGroup": "piston",
+      "jobUrl": "https://github.com/getpiston/runner-benchmarks/actions/runs/46077412672/job/140768343202",
+      "host": {
+        "collectedAt": "2026-11-27T22:34:21+00:00",
+        "arch": "x86_64",
+        "kernel": "6.8.0-151-generic",
+        "os": "Ubuntu 24.04.5 LTS",
+        "cpu": {
+          "model": "Intel x86-64 CPU",
+          "vendor": "GenuineIntel",
+          "logicalCpus": 2,
+          "threadsPerCore": 1,
+          "maxMHz": null,
+          "virtualization": "kvm",
+          "hypervisor": "KVM"
+        },
+        "memoryGiB": 7.76,
+        "memory": {
+          "swapGiB": 4.0,
+          "availableGiB": 7.16,
+          "swapDevices": [
+            {
+              "kind": "file",
+              "sizeGiB": 4.0
+            }
+          ],
+          "overcommit": 0,
+          "swappiness": 10
+        },
+        "manufacturer": "Cloud Hypervisor",
+        "product": "cloud-hypervisor",
+        "storage": {
+          "workspace": {
+            "path": "/home/runner/_work/runner-benchmarks/runner-benchmarks",
+            "source": "/dev/vda",
+            "target": "/",
+            "fstype": "ext4",
+            "options": "rw,noatime,journal_async_commit,nobarrier,data=writeback",
+            "sizeGiB": 97.9,
+            "freeGiB": 33.9
+          },
+          "tmp": {
+            "path": "/tmp",
+            "source": "/dev/vda",
+            "target": "/",
+            "fstype": "ext4",
+            "options": "rw,noatime,journal_async_commit,nobarrier,data=writeback",
+            "sizeGiB": 97.9,
+            "freeGiB": 33.9
+          },
+          "root": {
+            "path": "/",
+            "source": "/dev/vda",
+            "target": "/",
+            "fstype": "ext4",
+            "options": "rw,noatime,journal_async_commit,nobarrier,data=writeback",
+            "sizeGiB": 97.9,
+            "freeGiB": 33.9
+          },
+          "docker": {
+            "path": "/var/lib/docker",
+            "source": "/dev/vda",
+            "target": "/",
+            "fstype": "ext4",
+            "options": "rw,noatime,journal_async_commit,nobarrier,data=writeback",
+            "sizeGiB": 97.9,
+            "freeGiB": 33.9
+          },
+          "dockerDriver": "overlay2",
+          "devices": [
+            {
+              "name": "vda",
+              "type": "disk",
+              "sizeGiB": 100.0,
+              "model": null,
+              "rotational": true,
+              "transport": "virtio",
+              "fstype": "ext4",
+              "mountpoint": "/"
+            }
+          ]
+        },
+        "ec2": null,
+        "runsOn": null,
+        "network": {
+          "org": "AS24940 Hetzner Online GmbH",
+          "city": "Falkenstein",
+          "region": "Saxony",
+          "country": "DE"
+        },
+        "runner": {
+          "name": "piston-a1234d80-5a6a-421c-a8ed-bf01a04a1fe4",
+          "environment": "self-hosted",
+          "imageOS": "ubuntu24",
+          "imageVersion": null
+        }
+      }
+    },
+    {
+      "key": "piston-x64-2x8--6",
+      "runnerId": "piston-x64-2x8",
+      "provider": "Piston",
+      "arch": "x64",
+      "iteration": 6,
+      "status": "success",
+      "failedAt": null,
+      "queueSeconds": 8,
+      "jobSeconds": 71,
+      "workloadSeconds": 60,
+      "createdAt": "2026-11-27T22:34:08Z",
+      "startedAt": "2026-11-27T22:34:16Z",
+      "phases": [
+        {
+          "name": "hold",
+          "seconds": 60,
+          "status": "success"
+        }
+      ],
+      "runnerName": "piston-32a3d514-58d1-4677-8969-b01654b6a208",
+      "runnerGroup": "piston",
+      "jobUrl": "https://github.com/getpiston/runner-benchmarks/actions/runs/46077412672/job/140768343273",
+      "host": {
+        "collectedAt": "2026-11-27T22:34:21+00:00",
+        "arch": "x86_64",
+        "kernel": "6.8.0-151-generic",
+        "os": "Ubuntu 24.04.5 LTS",
+        "cpu": {
+          "model": "Intel x86-64 CPU",
+          "vendor": "GenuineIntel",
+          "logicalCpus": 2,
+          "threadsPerCore": 1,
+          "maxMHz": null,
+          "virtualization": "kvm",
+          "hypervisor": "KVM"
+        },
+        "memoryGiB": 7.76,
+        "memory": {
+          "swapGiB": 4.0,
+          "availableGiB": 7.15,
+          "swapDevices": [
+            {
+              "kind": "file",
+              "sizeGiB": 4.0
+            }
+          ],
+          "overcommit": 0,
+          "swappiness": 10
+        },
+        "manufacturer": "Cloud Hypervisor",
+        "product": "cloud-hypervisor",
+        "storage": {
+          "workspace": {
+            "path": "/home/runner/_work/runner-benchmarks/runner-benchmarks",
+            "source": "/dev/vda",
+            "target": "/",
+            "fstype": "ext4",
+            "options": "rw,noatime,journal_async_commit,nobarrier,data=writeback",
+            "sizeGiB": 97.9,
+            "freeGiB": 33.9
+          },
+          "tmp": {
+            "path": "/tmp",
+            "source": "/dev/vda",
+            "target": "/",
+            "fstype": "ext4",
+            "options": "rw,noatime,journal_async_commit,nobarrier,data=writeback",
+            "sizeGiB": 97.9,
+            "freeGiB": 33.9
+          },
+          "root": {
+            "path": "/",
+            "source": "/dev/vda",
+            "target": "/",
+            "fstype": "ext4",
+            "options": "rw,noatime,journal_async_commit,nobarrier,data=writeback",
+            "sizeGiB": 97.9,
+            "freeGiB": 33.9
+          },
+          "docker": {
+            "path": "/var/lib/docker",
+            "source": "/dev/vda",
+            "target": "/",
+            "fstype": "ext4",
+            "options": "rw,noatime,journal_async_commit,nobarrier,data=writeback",
+            "sizeGiB": 97.9,
+            "freeGiB": 33.9
+          },
+          "dockerDriver": "overlay2",
+          "devices": [
+            {
+              "name": "vda",
+              "type": "disk",
+              "sizeGiB": 100.0,
+              "model": null,
+              "rotational": true,
+              "transport": "virtio",
+              "fstype": "ext4",
+              "mountpoint": "/"
+            }
+          ]
+        },
+        "ec2": null,
+        "runsOn": null,
+        "network": {
+          "org": "AS24940 Hetzner Online GmbH",
+          "city": "Falkenstein",
+          "region": "Saxony",
+          "country": "DE"
+        },
+        "runner": {
+          "name": "piston-32a3d514-58d1-4677-8969-b01654b6a208",
+          "environment": "self-hosted",
+          "imageOS": "ubuntu24",
+          "imageVersion": null
+        }
+      }
+    },
+    {
+      "key": "piston-x64-2x8--7",
+      "runnerId": "piston-x64-2x8",
+      "provider": "Piston",
+      "arch": "x64",
+      "iteration": 7,
+      "status": "success",
+      "failedAt": null,
+      "queueSeconds": 8,
+      "jobSeconds": 71,
+      "workloadSeconds": 60,
+      "createdAt": "2026-11-27T22:34:08Z",
+      "startedAt": "2026-11-27T22:34:16Z",
+      "phases": [
+        {
+          "name": "hold",
+          "seconds": 60,
+          "status": "success"
+        }
+      ],
+      "runnerName": "piston-99246855-2a51-4436-8884-f723d2a618c9",
+      "runnerGroup": "piston",
+      "jobUrl": "https://github.com/getpiston/runner-benchmarks/actions/runs/46077412672/job/140768343279",
+      "host": {
+        "collectedAt": "2026-11-27T22:34:20+00:00",
+        "arch": "x86_64",
+        "kernel": "6.8.0-151-generic",
+        "os": "Ubuntu 24.04.5 LTS",
+        "cpu": {
+          "model": "Intel x86-64 CPU",
+          "vendor": "GenuineIntel",
+          "logicalCpus": 2,
+          "threadsPerCore": 1,
+          "maxMHz": null,
+          "virtualization": "kvm",
+          "hypervisor": "KVM"
+        },
+        "memoryGiB": 7.76,
+        "memory": {
+          "swapGiB": 4.0,
+          "availableGiB": 7.17,
+          "swapDevices": [
+            {
+              "kind": "file",
+              "sizeGiB": 4.0
+            }
+          ],
+          "overcommit": 0,
+          "swappiness": 10
+        },
+        "manufacturer": "Cloud Hypervisor",
+        "product": "cloud-hypervisor",
+        "storage": {
+          "workspace": {
+            "path": "/home/runner/_work/runner-benchmarks/runner-benchmarks",
+            "source": "/dev/vda",
+            "target": "/",
+            "fstype": "ext4",
+            "options": "rw,noatime,journal_async_commit,nobarrier,data=writeback",
+            "sizeGiB": 97.9,
+            "freeGiB": 33.9
+          },
+          "tmp": {
+            "path": "/tmp",
+            "source": "/dev/vda",
+            "target": "/",
+            "fstype": "ext4",
+            "options": "rw,noatime,journal_async_commit,nobarrier,data=writeback",
+            "sizeGiB": 97.9,
+            "freeGiB": 33.9
+          },
+          "root": {
+            "path": "/",
+            "source": "/dev/vda",
+            "target": "/",
+            "fstype": "ext4",
+            "options": "rw,noatime,journal_async_commit,nobarrier,data=writeback",
+            "sizeGiB": 97.9,
+            "freeGiB": 33.9
+          },
+          "docker": {
+            "path": "/var/lib/docker",
+            "source": "/dev/vda",
+            "target": "/",
+            "fstype": "ext4",
+            "options": "rw,noatime,journal_async_commit,nobarrier,data=writeback",
+            "sizeGiB": 97.9,
+            "freeGiB": 33.9
+          },
+          "dockerDriver": "overlay2",
+          "devices": [
+            {
+              "name": "vda",
+              "type": "disk",
+              "sizeGiB": 100.0,
+              "model": null,
+              "rotational": true,
+              "transport": "virtio",
+              "fstype": "ext4",
+              "mountpoint": "/"
+            }
+          ]
+        },
+        "ec2": null,
+        "runsOn": null,
+        "network": {
+          "org": "AS24940 Hetzner Online GmbH",
+          "city": "Falkenstein",
+          "region": "Saxony",
+          "country": "DE"
+        },
+        "runner": {
+          "name": "piston-99246855-2a51-4436-8884-f723d2a618c9",
+          "environment": "self-hosted",
+          "imageOS": "ubuntu24",
+          "imageVersion": null
+        }
+      }
+    },
+    {
+      "key": "piston-x64-2x8--8",
+      "runnerId": "piston-x64-2x8",
+      "provider": "Piston",
+      "arch": "x64",
+      "iteration": 8,
+      "status": "success",
+      "failedAt": null,
+      "queueSeconds": 8,
+      "jobSeconds": 71,
+      "workloadSeconds": 60,
+      "createdAt": "2026-11-27T22:34:08Z",
+      "startedAt": "2026-11-27T22:34:16Z",
+      "phases": [
+        {
+          "name": "hold",
+          "seconds": 60,
+          "status": "success"
+        }
+      ],
+      "runnerName": "piston-09747e0e-79ed-4f48-8d56-de660091c00b",
+      "runnerGroup": "piston",
+      "jobUrl": "https://github.com/getpiston/runner-benchmarks/actions/runs/46077412672/job/140768343227",
+      "host": {
+        "collectedAt": "2026-11-27T22:34:20+00:00",
+        "arch": "x86_64",
+        "kernel": "6.8.0-151-generic",
+        "os": "Ubuntu 24.04.5 LTS",
+        "cpu": {
+          "model": "Intel x86-64 CPU",
+          "vendor": "GenuineIntel",
+          "logicalCpus": 2,
+          "threadsPerCore": 1,
+          "maxMHz": null,
+          "virtualization": "kvm",
+          "hypervisor": "KVM"
+        },
+        "memoryGiB": 7.76,
+        "memory": {
+          "swapGiB": 4.0,
+          "availableGiB": 7.15,
+          "swapDevices": [
+            {
+              "kind": "file",
+              "sizeGiB": 4.0
+            }
+          ],
+          "overcommit": 0,
+          "swappiness": 10
+        },
+        "manufacturer": "Cloud Hypervisor",
+        "product": "cloud-hypervisor",
+        "storage": {
+          "workspace": {
+            "path": "/home/runner/_work/runner-benchmarks/runner-benchmarks",
+            "source": "/dev/vda",
+            "target": "/",
+            "fstype": "ext4",
+            "options": "rw,noatime,journal_async_commit,nobarrier,data=writeback",
+            "sizeGiB": 97.9,
+            "freeGiB": 33.9
+          },
+          "tmp": {
+            "path": "/tmp",
+            "source": "/dev/vda",
+            "target": "/",
+            "fstype": "ext4",
+            "options": "rw,noatime,journal_async_commit,nobarrier,data=writeback",
+            "sizeGiB": 97.9,
+            "freeGiB": 33.9
+          },
+          "root": {
+            "path": "/",
+            "source": "/dev/vda",
+            "target": "/",
+            "fstype": "ext4",
+            "options": "rw,noatime,journal_async_commit,nobarrier,data=writeback",
+            "sizeGiB": 97.9,
+            "freeGiB": 33.9
+          },
+          "docker": {
+            "path": "/var/lib/docker",
+            "source": "/dev/vda",
+            "target": "/",
+            "fstype": "ext4",
+            "options": "rw,noatime,journal_async_commit,nobarrier,data=writeback",
+            "sizeGiB": 97.9,
+            "freeGiB": 33.9
+          },
+          "dockerDriver": "overlay2",
+          "devices": [
+            {
+              "name": "vda",
+              "type": "disk",
+              "sizeGiB": 100.0,
+              "model": null,
+              "rotational": true,
+              "transport": "virtio",
+              "fstype": "ext4",
+              "mountpoint": "/"
+            }
+          ]
+        },
+        "ec2": null,
+        "runsOn": null,
+        "network": {
+          "org": "AS24940 Hetzner Online GmbH",
+          "city": "Falkenstein",
+          "region": "Saxony",
+          "country": "DE"
+        },
+        "runner": {
+          "name": "piston-09747e0e-79ed-4f48-8d56-de660091c00b",
+          "environment": "self-hosted",
+          "imageOS": "ubuntu24",
+          "imageVersion": null
+        }
+      }
+    },
+    {
+      "key": "piston-x64-2x8--9",
+      "runnerId": "piston-x64-2x8",
+      "provider": "Piston",
+      "arch": "x64",
+      "iteration": 9,
+      "status": "success",
+      "failedAt": null,
+      "queueSeconds": 8,
+      "jobSeconds": 71,
+      "workloadSeconds": 60,
+      "createdAt": "2026-11-27T22:34:08Z",
+      "startedAt": "2026-11-27T22:34:16Z",
+      "phases": [
+        {
+          "name": "hold",
+          "seconds": 60,
+          "status": "success"
+        }
+      ],
+      "runnerName": "piston-0e7cb77d-4e87-4e3e-9a99-8f89795327e5",
+      "runnerGroup": "piston",
+      "jobUrl": "https://github.com/getpiston/runner-benchmarks/actions/runs/46077412672/job/140768343280",
+      "host": {
+        "collectedAt": "2026-11-27T22:34:21+00:00",
+        "arch": "x86_64",
+        "kernel": "6.8.0-151-generic",
+        "os": "Ubuntu 24.04.5 LTS",
+        "cpu": {
+          "model": "Intel x86-64 CPU",
+          "vendor": "GenuineIntel",
+          "logicalCpus": 2,
+          "threadsPerCore": 1,
+          "maxMHz": null,
+          "virtualization": "kvm",
+          "hypervisor": "KVM"
+        },
+        "memoryGiB": 7.76,
+        "memory": {
+          "swapGiB": 4.0,
+          "availableGiB": 7.17,
+          "swapDevices": [
+            {
+              "kind": "file",
+              "sizeGiB": 4.0
+            }
+          ],
+          "overcommit": 0,
+          "swappiness": 10
+        },
+        "manufacturer": "Cloud Hypervisor",
+        "product": "cloud-hypervisor",
+        "storage": {
+          "workspace": {
+            "path": "/home/runner/_work/runner-benchmarks/runner-benchmarks",
+            "source": "/dev/vda",
+            "target": "/",
+            "fstype": "ext4",
+            "options": "rw,noatime,journal_async_commit,nobarrier,data=writeback",
+            "sizeGiB": 97.9,
+            "freeGiB": 33.9
+          },
+          "tmp": {
+            "path": "/tmp",
+            "source": "/dev/vda",
+            "target": "/",
+            "fstype": "ext4",
+            "options": "rw,noatime,journal_async_commit,nobarrier,data=writeback",
+            "sizeGiB": 97.9,
+            "freeGiB": 33.9
+          },
+          "root": {
+            "path": "/",
+            "source": "/dev/vda",
+            "target": "/",
+            "fstype": "ext4",
+            "options": "rw,noatime,journal_async_commit,nobarrier,data=writeback",
+            "sizeGiB": 97.9,
+            "freeGiB": 33.9
+          },
+          "docker": {
+            "path": "/var/lib/docker",
+            "source": "/dev/vda",
+            "target": "/",
+            "fstype": "ext4",
+            "options": "rw,noatime,journal_async_commit,nobarrier,data=writeback",
+            "sizeGiB": 97.9,
+            "freeGiB": 33.9
+          },
+          "dockerDriver": "overlay2",
+          "devices": [
+            {
+              "name": "vda",
+              "type": "disk",
+              "sizeGiB": 100.0,
+              "model": null,
+              "rotational": true,
+              "transport": "virtio",
+              "fstype": "ext4",
+              "mountpoint": "/"
+            }
+          ]
+        },
+        "ec2": null,
+        "runsOn": null,
+        "network": {
+          "org": "AS24940 Hetzner Online GmbH",
+          "city": "Falkenstein",
+          "region": "Saxony",
+          "country": "DE"
+        },
+        "runner": {
+          "name": "piston-0e7cb77d-4e87-4e3e-9a99-8f89795327e5",
+          "environment": "self-hosted",
+          "imageOS": "ubuntu24",
+          "imageVersion": null
+        }
+      }
+    },
+    {
+      "key": "piston-x64-2x8--10",
+      "runnerId": "piston-x64-2x8",
+      "provider": "Piston",
+      "arch": "x64",
+      "iteration": 10,
+      "status": "success",
+      "failedAt": null,
+      "queueSeconds": 8,
+      "jobSeconds": 71,
+      "workloadSeconds": 60,
+      "createdAt": "2026-11-27T22:34:08Z",
+      "startedAt": "2026-11-27T22:34:16Z",
+      "phases": [
+        {
+          "name": "hold",
+          "seconds": 60,
+          "status": "success"
+        }
+      ],
+      "runnerName": "piston-a25621d8-6cd7-4783-ba6e-efb50c1227da",
+      "runnerGroup": "piston",
+      "jobUrl": "https://github.com/getpiston/runner-benchmarks/actions/runs/46077412672/job/140768343313",
+      "host": {
+        "collectedAt": "2026-11-27T22:34:20+00:00",
+        "arch": "x86_64",
+        "kernel": "6.8.0-151-generic",
+        "os": "Ubuntu 24.04.5 LTS",
+        "cpu": {
+          "model": "Intel x86-64 CPU",
+          "vendor": "GenuineIntel",
+          "logicalCpus": 2,
+          "threadsPerCore": 1,
+          "maxMHz": null,
+          "virtualization": "kvm",
+          "hypervisor": "KVM"
+        },
+        "memoryGiB": 7.76,
+        "memory": {
+          "swapGiB": 4.0,
+          "availableGiB": 7.17,
+          "swapDevices": [
+            {
+              "kind": "file",
+              "sizeGiB": 4.0
+            }
+          ],
+          "overcommit": 0,
+          "swappiness": 10
+        },
+        "manufacturer": "Cloud Hypervisor",
+        "product": "cloud-hypervisor",
+        "storage": {
+          "workspace": {
+            "path": "/home/runner/_work/runner-benchmarks/runner-benchmarks",
+            "source": "/dev/vda",
+            "target": "/",
+            "fstype": "ext4",
+            "options": "rw,noatime,journal_async_commit,nobarrier,data=writeback",
+            "sizeGiB": 97.9,
+            "freeGiB": 33.9
+          },
+          "tmp": {
+            "path": "/tmp",
+            "source": "/dev/vda",
+            "target": "/",
+            "fstype": "ext4",
+            "options": "rw,noatime,journal_async_commit,nobarrier,data=writeback",
+            "sizeGiB": 97.9,
+            "freeGiB": 33.9
+          },
+          "root": {
+            "path": "/",
+            "source": "/dev/vda",
+            "target": "/",
+            "fstype": "ext4",
+            "options": "rw,noatime,journal_async_commit,nobarrier,data=writeback",
+            "sizeGiB": 97.9,
+            "freeGiB": 33.9
+          },
+          "docker": {
+            "path": "/var/lib/docker",
+            "source": "/dev/vda",
+            "target": "/",
+            "fstype": "ext4",
+            "options": "rw,noatime,journal_async_commit,nobarrier,data=writeback",
+            "sizeGiB": 97.9,
+            "freeGiB": 33.9
+          },
+          "dockerDriver": "overlay2",
+          "devices": [
+            {
+              "name": "vda",
+              "type": "disk",
+              "sizeGiB": 100.0,
+              "model": null,
+              "rotational": true,
+              "transport": "virtio",
+              "fstype": "ext4",
+              "mountpoint": "/"
+            }
+          ]
+        },
+        "ec2": null,
+        "runsOn": null,
+        "network": {
+          "org": "AS24940 Hetzner Online GmbH",
+          "city": "Falkenstein",
+          "region": "Saxony",
+          "country": "DE"
+        },
+        "runner": {
+          "name": "piston-a25621d8-6cd7-4783-ba6e-efb50c1227da",
+          "environment": "self-hosted",
+          "imageOS": "ubuntu24",
+          "imageVersion": null
+        }
+      }
+    },
+    {
+      "key": "piston-x64-2x8--11",
+      "runnerId": "piston-x64-2x8",
+      "provider": "Piston",
+      "arch": "x64",
+      "iteration": 11,
+      "status": "success",
+      "failedAt": null,
+      "queueSeconds": 8,
+      "jobSeconds": 71,
+      "workloadSeconds": 60,
+      "createdAt": "2026-11-27T22:34:08Z",
+      "startedAt": "2026-11-27T22:34:16Z",
+      "phases": [
+        {
+          "name": "hold",
+          "seconds": 60,
+          "status": "success"
+        }
+      ],
+      "runnerName": "piston-b0d9856f-8ffa-4dd8-a6bf-0b0b98794a57",
+      "runnerGroup": "piston",
+      "jobUrl": "https://github.com/getpiston/runner-benchmarks/actions/runs/46077412672/job/140768343262",
+      "host": {
+        "collectedAt": "2026-11-27T22:34:21+00:00",
+        "arch": "x86_64",
+        "kernel": "6.8.0-151-generic",
+        "os": "Ubuntu 24.04.5 LTS",
+        "cpu": {
+          "model": "Intel x86-64 CPU",
+          "vendor": "GenuineIntel",
+          "logicalCpus": 2,
+          "threadsPerCore": 1,
+          "maxMHz": null,
+          "virtualization": "kvm",
+          "hypervisor": "KVM"
+        },
+        "memoryGiB": 7.76,
+        "memory": {
+          "swapGiB": 4.0,
+          "availableGiB": 7.12,
+          "swapDevices": [
+            {
+              "kind": "file",
+              "sizeGiB": 4.0
+            }
+          ],
+          "overcommit": 0,
+          "swappiness": 10
+        },
+        "manufacturer": "Cloud Hypervisor",
+        "product": "cloud-hypervisor",
+        "storage": {
+          "workspace": {
+            "path": "/home/runner/_work/runner-benchmarks/runner-benchmarks",
+            "source": "/dev/vda",
+            "target": "/",
+            "fstype": "ext4",
+            "options": "rw,noatime,journal_async_commit,nobarrier,data=writeback",
+            "sizeGiB": 97.9,
+            "freeGiB": 33.9
+          },
+          "tmp": {
+            "path": "/tmp",
+            "source": "/dev/vda",
+            "target": "/",
+            "fstype": "ext4",
+            "options": "rw,noatime,journal_async_commit,nobarrier,data=writeback",
+            "sizeGiB": 97.9,
+            "freeGiB": 33.9
+          },
+          "root": {
+            "path": "/",
+            "source": "/dev/vda",
+            "target": "/",
+            "fstype": "ext4",
+            "options": "rw,noatime,journal_async_commit,nobarrier,data=writeback",
+            "sizeGiB": 97.9,
+            "freeGiB": 33.9
+          },
+          "docker": {
+            "path": "/var/lib/docker",
+            "source": "/dev/vda",
+            "target": "/",
+            "fstype": "ext4",
+            "options": "rw,noatime,journal_async_commit,nobarrier,data=writeback",
+            "sizeGiB": 97.9,
+            "freeGiB": 33.9
+          },
+          "dockerDriver": "overlay2",
+          "devices": [
+            {
+              "name": "vda",
+              "type": "disk",
+              "sizeGiB": 100.0,
+              "model": null,
+              "rotational": true,
+              "transport": "virtio",
+              "fstype": "ext4",
+              "mountpoint": "/"
+            }
+          ]
+        },
+        "ec2": null,
+        "runsOn": null,
+        "network": {
+          "org": "AS24940 Hetzner Online GmbH",
+          "city": "Falkenstein",
+          "region": "Saxony",
+          "country": "DE"
+        },
+        "runner": {
+          "name": "piston-b0d9856f-8ffa-4dd8-a6bf-0b0b98794a57",
+          "environment": "self-hosted",
+          "imageOS": "ubuntu24",
+          "imageVersion": null
+        }
+      }
+    },
+    {
+      "key": "piston-x64-2x8--12",
+      "runnerId": "piston-x64-2x8",
+      "provider": "Piston",
+      "arch": "x64",
+      "iteration": 12,
+      "status": "success",
+      "failedAt": null,
+      "queueSeconds": 8,
+      "jobSeconds": 71,
+      "workloadSeconds": 60,
+      "createdAt": "2026-11-27T22:34:08Z",
+      "startedAt": "2026-11-27T22:34:16Z",
+      "phases": [
+        {
+          "name": "hold",
+          "seconds": 60,
+          "status": "success"
+        }
+      ],
+      "runnerName": "piston-5b488b55-c48a-469e-9bc3-286e46c8e2ef",
+      "runnerGroup": "piston",
+      "jobUrl": "https://github.com/getpiston/runner-benchmarks/actions/runs/46077412672/job/140768343283",
+      "host": {
+        "collectedAt": "2026-11-27T22:34:21+00:00",
+        "arch": "x86_64",
+        "kernel": "6.8.0-151-generic",
+        "os": "Ubuntu 24.04.5 LTS",
+        "cpu": {
+          "model": "Intel x86-64 CPU",
+          "vendor": "GenuineIntel",
+          "logicalCpus": 2,
+          "threadsPerCore": 1,
+          "maxMHz": null,
+          "virtualization": "kvm",
+          "hypervisor": "KVM"
+        },
+        "memoryGiB": 7.76,
+        "memory": {
+          "swapGiB": 4.0,
+          "availableGiB": 7.14,
+          "swapDevices": [
+            {
+              "kind": "file",
+              "sizeGiB": 4.0
+            }
+          ],
+          "overcommit": 0,
+          "swappiness": 10
+        },
+        "manufacturer": "Cloud Hypervisor",
+        "product": "cloud-hypervisor",
+        "storage": {
+          "workspace": {
+            "path": "/home/runner/_work/runner-benchmarks/runner-benchmarks",
+            "source": "/dev/vda",
+            "target": "/",
+            "fstype": "ext4",
+            "options": "rw,noatime,journal_async_commit,nobarrier,data=writeback",
+            "sizeGiB": 97.9,
+            "freeGiB": 33.9
+          },
+          "tmp": {
+            "path": "/tmp",
+            "source": "/dev/vda",
+            "target": "/",
+            "fstype": "ext4",
+            "options": "rw,noatime,journal_async_commit,nobarrier,data=writeback",
+            "sizeGiB": 97.9,
+            "freeGiB": 33.9
+          },
+          "root": {
+            "path": "/",
+            "source": "/dev/vda",
+            "target": "/",
+            "fstype": "ext4",
+            "options": "rw,noatime,journal_async_commit,nobarrier,data=writeback",
+            "sizeGiB": 97.9,
+            "freeGiB": 33.9
+          },
+          "docker": {
+            "path": "/var/lib/docker",
+            "source": "/dev/vda",
+            "target": "/",
+            "fstype": "ext4",
+            "options": "rw,noatime,journal_async_commit,nobarrier,data=writeback",
+            "sizeGiB": 97.9,
+            "freeGiB": 33.9
+          },
+          "dockerDriver": "overlay2",
+          "devices": [
+            {
+              "name": "vda",
+              "type": "disk",
+              "sizeGiB": 100.0,
+              "model": null,
+              "rotational": true,
+              "transport": "virtio",
+              "fstype": "ext4",
+              "mountpoint": "/"
+            }
+          ]
+        },
+        "ec2": null,
+        "runsOn": null,
+        "network": {
+          "org": "AS24940 Hetzner Online GmbH",
+          "city": "Falkenstein",
+          "region": "Saxony",
+          "country": "DE"
+        },
+        "runner": {
+          "name": "piston-5b488b55-c48a-469e-9bc3-286e46c8e2ef",
+          "environment": "self-hosted",
+          "imageOS": "ubuntu24",
+          "imageVersion": null
+        }
+      }
+    },
+    {
+      "key": "piston-x64-2x8--13",
+      "runnerId": "piston-x64-2x8",
+      "provider": "Piston",
+      "arch": "x64",
+      "iteration": 13,
+      "status": "success",
+      "failedAt": null,
+      "queueSeconds": 8,
+      "jobSeconds": 71,
+      "workloadSeconds": 60,
+      "createdAt": "2026-11-27T22:34:08Z",
+      "startedAt": "2026-11-27T22:34:16Z",
+      "phases": [
+        {
+          "name": "hold",
+          "seconds": 60,
+          "status": "success"
+        }
+      ],
+      "runnerName": "piston-eb337723-9a8c-4b2b-95d5-d470b137d52a",
+      "runnerGroup": "piston",
+      "jobUrl": "https://github.com/getpiston/runner-benchmarks/actions/runs/46077412672/job/140768343230",
+      "host": {
+        "collectedAt": "2026-11-27T22:34:21+00:00",
+        "arch": "x86_64",
+        "kernel": "6.8.0-151-generic",
+        "os": "Ubuntu 24.04.5 LTS",
+        "cpu": {
+          "model": "Intel x86-64 CPU",
+          "vendor": "GenuineIntel",
+          "logicalCpus": 2,
+          "threadsPerCore": 1,
+          "maxMHz": null,
+          "virtualization": "kvm",
+          "hypervisor": "KVM"
+        },
+        "memoryGiB": 7.76,
+        "memory": {
+          "swapGiB": 4.0,
+          "availableGiB": 7.11,
+          "swapDevices": [
+            {
+              "kind": "file",
+              "sizeGiB": 4.0
+            }
+          ],
+          "overcommit": 0,
+          "swappiness": 10
+        },
+        "manufacturer": "Cloud Hypervisor",
+        "product": "cloud-hypervisor",
+        "storage": {
+          "workspace": {
+            "path": "/home/runner/_work/runner-benchmarks/runner-benchmarks",
+            "source": "/dev/vda",
+            "target": "/",
+            "fstype": "ext4",
+            "options": "rw,noatime,journal_async_commit,nobarrier,data=writeback",
+            "sizeGiB": 97.9,
+            "freeGiB": 33.9
+          },
+          "tmp": {
+            "path": "/tmp",
+            "source": "/dev/vda",
+            "target": "/",
+            "fstype": "ext4",
+            "options": "rw,noatime,journal_async_commit,nobarrier,data=writeback",
+            "sizeGiB": 97.9,
+            "freeGiB": 33.9
+          },
+          "root": {
+            "path": "/",
+            "source": "/dev/vda",
+            "target": "/",
+            "fstype": "ext4",
+            "options": "rw,noatime,journal_async_commit,nobarrier,data=writeback",
+            "sizeGiB": 97.9,
+            "freeGiB": 33.9
+          },
+          "docker": {
+            "path": "/var/lib/docker",
+            "source": "/dev/vda",
+            "target": "/",
+            "fstype": "ext4",
+            "options": "rw,noatime,journal_async_commit,nobarrier,data=writeback",
+            "sizeGiB": 97.9,
+            "freeGiB": 33.9
+          },
+          "dockerDriver": "overlay2",
+          "devices": [
+            {
+              "name": "vda",
+              "type": "disk",
+              "sizeGiB": 100.0,
+              "model": null,
+              "rotational": true,
+              "transport": "virtio",
+              "fstype": "ext4",
+              "mountpoint": "/"
+            }
+          ]
+        },
+        "ec2": null,
+        "runsOn": null,
+        "network": {
+          "org": "AS24940 Hetzner Online GmbH",
+          "city": "Falkenstein",
+          "region": "Saxony",
+          "country": "DE"
+        },
+        "runner": {
+          "name": "piston-eb337723-9a8c-4b2b-95d5-d470b137d52a",
+          "environment": "self-hosted",
+          "imageOS": "ubuntu24",
+          "imageVersion": null
+        }
+      }
+    },
+    {
+      "key": "piston-x64-2x8--14",
+      "runnerId": "piston-x64-2x8",
+      "provider": "Piston",
+      "arch": "x64",
+      "iteration": 14,
+      "status": "success",
+      "failedAt": null,
+      "queueSeconds": 8,
+      "jobSeconds": 70,
+      "workloadSeconds": 60,
+      "createdAt": "2026-11-27T22:34:08Z",
+      "startedAt": "2026-11-27T22:34:16Z",
+      "phases": [
+        {
+          "name": "hold",
+          "seconds": 60,
+          "status": "success"
+        }
+      ],
+      "runnerName": "piston-8fa95408-9347-4463-b066-78c5f7bd2d45",
+      "runnerGroup": "piston",
+      "jobUrl": "https://github.com/getpiston/runner-benchmarks/actions/runs/46077412672/job/140768343226",
+      "host": {
+        "collectedAt": "2026-11-27T22:34:21+00:00",
+        "arch": "x86_64",
+        "kernel": "6.8.0-151-generic",
+        "os": "Ubuntu 24.04.5 LTS",
+        "cpu": {
+          "model": "Intel x86-64 CPU",
+          "vendor": "GenuineIntel",
+          "logicalCpus": 2,
+          "threadsPerCore": 1,
+          "maxMHz": null,
+          "virtualization": "kvm",
+          "hypervisor": "KVM"
+        },
+        "memoryGiB": 7.76,
+        "memory": {
+          "swapGiB": 4.0,
+          "availableGiB": 7.19,
+          "swapDevices": [
+            {
+              "kind": "file",
+              "sizeGiB": 4.0
+            }
+          ],
+          "overcommit": 0,
+          "swappiness": 10
+        },
+        "manufacturer": "Cloud Hypervisor",
+        "product": "cloud-hypervisor",
+        "storage": {
+          "workspace": {
+            "path": "/home/runner/_work/runner-benchmarks/runner-benchmarks",
+            "source": "/dev/vda",
+            "target": "/",
+            "fstype": "ext4",
+            "options": "rw,noatime,journal_async_commit,nobarrier,data=writeback",
+            "sizeGiB": 97.9,
+            "freeGiB": 33.9
+          },
+          "tmp": {
+            "path": "/tmp",
+            "source": "/dev/vda",
+            "target": "/",
+            "fstype": "ext4",
+            "options": "rw,noatime,journal_async_commit,nobarrier,data=writeback",
+            "sizeGiB": 97.9,
+            "freeGiB": 33.9
+          },
+          "root": {
+            "path": "/",
+            "source": "/dev/vda",
+            "target": "/",
+            "fstype": "ext4",
+            "options": "rw,noatime,journal_async_commit,nobarrier,data=writeback",
+            "sizeGiB": 97.9,
+            "freeGiB": 33.9
+          },
+          "docker": {
+            "path": "/var/lib/docker",
+            "source": "/dev/vda",
+            "target": "/",
+            "fstype": "ext4",
+            "options": "rw,noatime,journal_async_commit,nobarrier,data=writeback",
+            "sizeGiB": 97.9,
+            "freeGiB": 33.9
+          },
+          "dockerDriver": "overlay2",
+          "devices": [
+            {
+              "name": "vda",
+              "type": "disk",
+              "sizeGiB": 100.0,
+              "model": null,
+              "rotational": true,
+              "transport": "virtio",
+              "fstype": "ext4",
+              "mountpoint": "/"
+            }
+          ]
+        },
+        "ec2": null,
+        "runsOn": null,
+        "network": {
+          "org": "AS24940 Hetzner Online GmbH",
+          "city": "Falkenstein",
+          "region": "Saxony",
+          "country": "DE"
+        },
+        "runner": {
+          "name": "piston-8fa95408-9347-4463-b066-78c5f7bd2d45",
+          "environment": "self-hosted",
+          "imageOS": "ubuntu24",
+          "imageVersion": null
+        }
+      }
+    },
+    {
+      "key": "piston-x64-2x8--15",
+      "runnerId": "piston-x64-2x8",
+      "provider": "Piston",
+      "arch": "x64",
+      "iteration": 15,
+      "status": "success",
+      "failedAt": null,
+      "queueSeconds": 8,
+      "jobSeconds": 71,
+      "workloadSeconds": 60,
+      "createdAt": "2026-11-27T22:34:08Z",
+      "startedAt": "2026-11-27T22:34:16Z",
+      "phases": [
+        {
+          "name": "hold",
+          "seconds": 60,
+          "status": "success"
+        }
+      ],
+      "runnerName": "piston-8fbdaf7c-6e55-415b-9011-feb36e11dd0b",
+      "runnerGroup": "piston",
+      "jobUrl": "https://github.com/getpiston/runner-benchmarks/actions/runs/46077412672/job/140768343254",
+      "host": {
+        "collectedAt": "2026-11-27T22:34:21+00:00",
+        "arch": "x86_64",
+        "kernel": "6.8.0-151-generic",
+        "os": "Ubuntu 24.04.5 LTS",
+        "cpu": {
+          "model": "Intel x86-64 CPU",
+          "vendor": "GenuineIntel",
+          "logicalCpus": 2,
+          "threadsPerCore": 1,
+          "maxMHz": null,
+          "virtualization": "kvm",
+          "hypervisor": "KVM"
+        },
+        "memoryGiB": 7.76,
+        "memory": {
+          "swapGiB": 4.0,
+          "availableGiB": 7.14,
+          "swapDevices": [
+            {
+              "kind": "file",
+              "sizeGiB": 4.0
+            }
+          ],
+          "overcommit": 0,
+          "swappiness": 10
+        },
+        "manufacturer": "Cloud Hypervisor",
+        "product": "cloud-hypervisor",
+        "storage": {
+          "workspace": {
+            "path": "/home/runner/_work/runner-benchmarks/runner-benchmarks",
+            "source": "/dev/vda",
+            "target": "/",
+            "fstype": "ext4",
+            "options": "rw,noatime,journal_async_commit,nobarrier,data=writeback",
+            "sizeGiB": 97.9,
+            "freeGiB": 33.9
+          },
+          "tmp": {
+            "path": "/tmp",
+            "source": "/dev/vda",
+            "target": "/",
+            "fstype": "ext4",
+            "options": "rw,noatime,journal_async_commit,nobarrier,data=writeback",
+            "sizeGiB": 97.9,
+            "freeGiB": 33.9
+          },
+          "root": {
+            "path": "/",
+            "source": "/dev/vda",
+            "target": "/",
+            "fstype": "ext4",
+            "options": "rw,noatime,journal_async_commit,nobarrier,data=writeback",
+            "sizeGiB": 97.9,
+            "freeGiB": 33.9
+          },
+          "docker": {
+            "path": "/var/lib/docker",
+            "source": "/dev/vda",
+            "target": "/",
+            "fstype": "ext4",
+            "options": "rw,noatime,journal_async_commit,nobarrier,data=writeback",
+            "sizeGiB": 97.9,
+            "freeGiB": 33.9
+          },
+          "dockerDriver": "overlay2",
+          "devices": [
+            {
+              "name": "vda",
+              "type": "disk",
+              "sizeGiB": 100.0,
+              "model": null,
+              "rotational": true,
+              "transport": "virtio",
+              "fstype": "ext4",
+              "mountpoint": "/"
+            }
+          ]
+        },
+        "ec2": null,
+        "runsOn": null,
+        "network": {
+          "org": "AS24940 Hetzner Online GmbH",
+          "city": "Falkenstein",
+          "region": "Saxony",
+          "country": "DE"
+        },
+        "runner": {
+          "name": "piston-8fbdaf7c-6e55-415b-9011-feb36e11dd0b",
+          "environment": "self-hosted",
+          "imageOS": "ubuntu24",
+          "imageVersion": null
+        }
+      }
+    }
+  ]
+}
