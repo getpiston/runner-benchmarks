@@ -19,6 +19,23 @@
       "origin": "workflow_dispatch"
     },
     {
+      "path": "node/2026-11-27-46075802716-1.json",
+      "suite": "node",
+      "date": "2026-11-27",
+      "runId": 46075802716,
+      "attempt": 1,
+      "jobs": 4,
+      "succeeded": 4,
+      "runners": [
+        "github-x64",
+        "piston-x64",
+        "piston-x64-2x8",
+        "piston-x64-8x32"
+      ],
+      "subset": true,
+      "origin": "workflow_dispatch"
+    },
+    {
       "path": "burst/2026-11-24-45319864821-1.json",
       "suite": "burst",
       "date": "2026-11-24",
